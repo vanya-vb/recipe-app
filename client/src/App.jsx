@@ -2,6 +2,7 @@
 import Header from './components/Header/Header'
 import HeroSection from './components/HeroSection/HeroSection'
 import LoginPage from './components/LoginPage/LoginPage'
+import RegisterPage from './components/RegisterPage/RegisterPage'
 
 function App() {
 	return (
@@ -9,6 +10,7 @@ function App() {
 			<Header />
 			<HeroSection />
 			<LoginPage />
+			<RegisterPage/>
 		</>
 	)
 }
