@@ -1,10 +1,16 @@
 
+import Header from './components/Header/Header'
+import HeroSection from './components/HeroSection/HeroSection'
+
 function App() {
-  return (
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+
+
+	return (
+		<>
+			<Header />
+			<HeroSection />
+		</>
+	)
 }
 
 export default App
