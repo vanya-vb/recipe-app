@@ -75,39 +75,42 @@ const menu = [
 
 export default function RecipesPage() {
     return (
-        <section className="py-30 bg-gray-900">
+        <section className="py-30 bg-night">
             <div className="text-center mb-8">
                 <h2 className="text-3xl text-white font-bold tracking-widest uppercase">Recipes</h2>
-                <div className="w-20 h-1 bg-yellow-600 mx-auto mt-2" />
+                <div className="w-20 h-1 bg-olivine mx-auto mt-2" />
             </div>
 
             <div className="flex justify-center flex-wrap gap-3 mb-10">
-                <button className="capitalize border border-yellow-600 text-yellow-600 px-4 py-2 rounded-md transition-all hover:bg-yellow-600 hover:text-white text-sm tracking-wide" type="button" data-id="all">
+                <button className="capitalize border border-olivine text-olivine px-4 py-2 rounded-md transition-all hover:bg-olivine hover:text-night text-sm tracking-wide" type="button" data-id="all">
                     all
                 </button>
-                <button className="capitalize border border-yellow-600 text-yellow-600 px-4 py-2 rounded-md transition-all hover:bg-yellow-600 hover:text-white text-sm tracking-wide" type="button" data-id="breakfast">
+                <button className="capitalize border border-olivine text-olivine px-4 py-2 rounded-md transition-all hover:bg-olivine hover:text-night text-sm tracking-wide" type="button" data-id="breakfast">
                     breakfast
                 </button>
-                <button className="capitalize border border-yellow-600 text-yellow-600 px-4 py-2 rounded-md transition-all hover:bg-yellow-600 hover:text-white text-sm tracking-wide" type="button" data-id="lunch">
+                <button className="capitalize border border-olivine text-olivine px-4 py-2 rounded-md transition-all hover:bg-olivine hover:text-night text-sm tracking-wide" type="button" data-id="lunch">
                     lunch
                 </button>
-                <button className="capitalize border border-yellow-600 text-yellow-600 px-4 py-2 rounded-md transition-all hover:bg-yellow-600 hover:text-white text-sm tracking-wide" type="button" data-id="shakes">
+                <button className="capitalize border border-olivine text-olivine px-4 py-2 rounded-md transition-all hover:bg-olivine hover:text-night text-sm tracking-wide" type="button" data-id="shakes">
                     shakes
                 </button>
             </div>
 
             <div className="grid gap-8 max-w-6xl mx-auto px-4 md:grid-cols-2">
+
                 {menu.map((item) => (
                     <article key={item.id} className="grid gap-4 md:grid-cols-[200px_1fr] capitalize">
-                        <img src={item.img} alt={item.title} className="h-48 w-full object-cover border-4 border-yellow-600 rounded-md md:h-40" />
+                        <img src={item.img} alt={item.title} className="h-48 w-full object-cover border-4 border-olivine rounded-md md:h-40" />
                         <div>
-                            <header className="flex justify-between items-center border-b border-gray-300 pb-1 mb-2">
+                            <header className="flex justify-between items-center border-b border-platinum pb-1 mb-2">
                                 <h4 className="text-lg text-white font-semibold">{item.title}</h4>
                             </header>
-                            <p className="text-gray-600 text-sm">{item.desc}</p>
+                            <p className="text-platinum/50 text-xs">{item.desc}</p>
+                            {/* add details btn */}
                         </div>
                     </article>
                 ))}
+
             </div>
         </section>
 

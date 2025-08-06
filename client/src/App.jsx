@@ -11,10 +11,10 @@ function App() {
 		<>
 			<Header />
 			<HeroSection />
-			{/* <LoginPage />
-			<RegisterPage/> */}
-			{/* <RecipesPage /> */}
+			<RecipesPage />
 			{/* <RecipeDetails /> */}
+			<LoginPage />
+			<RegisterPage/>
 		</>
 	)
 }

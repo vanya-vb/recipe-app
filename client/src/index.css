@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+    --color-tangerine: #E58A37;
+    --color-hunter-green: #465336;
+    --color-platinum: #E4E4E4;
+    --color-olivine: #A5B263;
+    --color-onyx: #404040;
+    --color-night: #111111;
+}

@@ -18,7 +18,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <header className="absolute inset-x-0 top-0 z-50">
+        <header className="fixed inset-x-0 top-0 z-50 bg-night/80">
             <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5">
@@ -41,11 +41,13 @@ export default function Header() {
                     </button>
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
+
                     {navigation.map((item) => (
-                        <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-white">
+                        <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-white hover:text-tangerine ">
                             {item.name}
                         </a>
                     ))}
+
                 </div>
             </nav>
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -72,6 +74,7 @@ export default function Header() {
                     <div className="mt-6 flow-root">
                         <div className="-my-6 divide-y divide-gray-100/10">
                             <div className="space-y-2 py-6">
+
                                 {navigation.map((item) => (
                                     <a
                                         key={item.name}
@@ -81,6 +84,7 @@ export default function Header() {
                                         {item.name}
                                     </a>
                                 ))}
+
                             </div>
                             {/* <div className="py-6">
                                 <a
