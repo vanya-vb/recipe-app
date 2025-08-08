@@ -12,9 +12,9 @@ function App() {
 			<Header />
 			<HeroSection />
 			<RecipesPage />
-			{/* <RecipeDetails /> */}
-			<LoginPage />
-			<RegisterPage/>
+			<RecipeDetails />
+			{/* <LoginPage />
+			<RegisterPage/> */}
 		</>
 	)
 }
