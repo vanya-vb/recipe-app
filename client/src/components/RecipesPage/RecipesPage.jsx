@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import recipeService from "../../services/recipeService";
+import RecipeItem from "./RecipeItem/RecipeItem";
 
 const menu = [
     {
@@ -55,7 +56,7 @@ export default function RecipesPage() {
             .then(res => setRecipes(res))
     }, []);
 
-    console.log(recipes)
+    // console.log(recipes);
 
     return (
         <section className="h-screen w-full py-30 bg-[url(https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center">
@@ -85,18 +86,7 @@ export default function RecipesPage() {
 
                 <div className="grid gap-8 max-w-6xl mx-auto px-4 md:grid-cols-2">
 
-                    {menu.map((item) => (
-                        <article key={item.id} className="grid gap-4 md:grid-cols-[200px_1fr] capitalize">
-                            <img src={item.img} alt={item.title} className="h-48 w-full object-cover border-4 border-olivine rounded-md md:h-40" />
-                            <div>
-                                <header className="flex justify-between items-center border-b border-platinum pb-1 mb-2">
-                                    <h4 className="text-lg text-white font-semibold">{item.title}</h4>
-                                </header>
-                                <p className="text-platinum/60 text-xs">{item.instructions}</p>
-                                {/* add details btn */}
-                            </div>
-                        </article>
-                    ))}
+                    {recipes.map(recipe => <RecipeItem key={recipe._id} {...recipe} />)}
 
                 </div>
             </div>
