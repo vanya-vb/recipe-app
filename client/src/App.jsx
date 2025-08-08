@@ -1,3 +1,4 @@
+import { Route, Routes } from 'react-router'
 
 import Header from './components/Header/Header'
 import HeroSection from './components/HeroSection/HeroSection'
@@ -5,16 +6,22 @@ import LoginPage from './components/LoginPage/LoginPage'
 import RecipeDetails from './components/RecipeDetails/RecipeDetails'
 import RecipesPage from './components/RecipesPage/RecipesPage'
 import RegisterPage from './components/RegisterPage/RegisterPage'
+import RecipeCreate from './components/RecipeCreate/RecipeCreate'
 
 function App() {
 	return (
 		<>
 			<Header />
-			<HeroSection />
-			<RecipesPage />
-			<RecipeDetails />
-			{/* <LoginPage />
-			<RegisterPage/> */}
+			<main>
+				<Routes>
+					<Route path='/' element={<HeroSection />} />
+					<Route path='/recipes' element={<RecipesPage />} />
+					<Route path='/recipes/create' element={<RecipeCreate />} />
+					<Route path='/login' element={<LoginPage />} />
+					<Route path='/register' element={<RegisterPage />} />
+					{/* <Route path='/recipes/:id' element={<RecipeDetails />} /> */}
+				</Routes>
+			</main>
 		</>
 	)
 }

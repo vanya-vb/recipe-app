@@ -1,6 +1,8 @@
+import { Link } from 'react-router'
+
 export default function LoginPage() {
     return (
-        <div className="flex min-h-full flex-col justify-center px-6 py-24 lg:px-8 bg-night">
+        <div className="flex min-h-full flex-col justify-center px-6 py-38 lg:px-8 bg-night">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                 <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-white">Sign in to your account</h2>
             </div>
@@ -58,9 +60,9 @@ export default function LoginPage() {
 
                 <p className="mt-10 text-center text-sm/6 text-platinum/90">
                     Not a member?{' '}
-                    <a href="#" className="font-semibold text-olivine hover:text-olivine/70">
+                    <Link to="/register" className="font-semibold text-olivine hover:text-olivine/70">
                         Register here →
-                    </a>
+                    </Link>
                 </p>
             </div>
         </div>
