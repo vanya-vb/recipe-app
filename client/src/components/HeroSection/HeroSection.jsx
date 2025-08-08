@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 export default function HeroSection() {
 
     return (
-        <section className="relative isolate px-6 pt-14 lg:px-8 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.85),rgba(0,0,0,0.35)),url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center w-full">
+        <section className="relative isolate px-6 pt-2 lg:px-8 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.85),rgba(0,0,0,0.35)),url('https://images.unsplash.com/photo-1514986888952-8cd320577b68?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center w-full">
             <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                 <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                 </div>
