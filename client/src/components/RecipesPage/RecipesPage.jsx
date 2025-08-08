@@ -4,35 +4,35 @@ const menu = [
         title: "buttermilk pancakes",
         category: "breakfast",
         img: "/src/components/RecipesPage/images/item-1.jpeg",
-        desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+        instructions: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
     },
     {
         id: 2,
         title: "diner double",
         category: "lunch",
         img: "/src/components/RecipesPage/images/item-2.jpeg",
-        desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
+        instructions: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
     },
     {
         id: 3,
         title: "godzilla milkshake",
         category: "shakes",
         img: "/src/components/RecipesPage/images/item-3.jpeg",
-        desc: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
+        instructions: `ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.`,
     },
     {
         id: 4,
         title: "country delight",
         category: "breakfast",
         img: "/src/components/RecipesPage/images/item-4.jpeg",
-        desc: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
+        instructions: `Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, `,
     },
     {
         id: 5,
         title: "egg attack",
         category: "lunch",
         img: "/src/components/RecipesPage/images/item-5.jpeg",
-        desc: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
+        instructions: `franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up `,
     },
     {
         id: 6,
@@ -40,7 +40,7 @@ const menu = [
         category: "shakes",
         price: 18.99,
         img: "/src/components/RecipesPage/images/item-6.jpeg",
-        desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
+        instructions: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
     },
 ];
 
@@ -80,7 +80,7 @@ export default function RecipesPage() {
                                 <header className="flex justify-between items-center border-b border-platinum pb-1 mb-2">
                                     <h4 className="text-lg text-white font-semibold">{item.title}</h4>
                                 </header>
-                                <p className="text-platinum/60 text-xs">{item.desc}</p>
+                                <p className="text-platinum/60 text-xs">{item.instructions}</p>
                                 {/* add details btn */}
                             </div>
                         </article>
