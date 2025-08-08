@@ -17,5 +17,9 @@ export default {
 
     create(recipeData) {
         return request.post(baseUrl, recipeData);
-    }
+    },
+
+    delete(gameId) {
+        return request.delete(`${baseUrl}/${gameId}`)
+    },
 };

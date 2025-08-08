@@ -1,17 +1,32 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router"
+import { useParams, Link, useNavigate } from "react-router"
 import recipeService from "../../services/recipeService";
 
 export default function RecipeDetails() {
     const [recipe, setRecipe] = useState({});
     const { recipeId } = useParams();
+    const navigate = useNavigate();
 
+    // fetch data
     useEffect(() => {
         (async () => {
             const result = await recipeService.getOne(recipeId);
             setRecipe(result);
         })()
     }, [recipeId]);
+
+    // delete handler
+    const gameDeleteClickHandler = async () => {
+        const hasConfirm = confirm(`Are you sure you want to delete ${recipe.title} recipe?`);
+
+        if (!hasConfirm) {
+            return;
+        }
+
+        await recipeService.delete(recipeId);
+
+        navigate('/recipes')
+    };
 
     return (
         <article className="max-w-3xl mx-auto my-25 p-10 bg-white rounded-lg shadow-md space-y-8 text-gray-800">
@@ -57,32 +72,20 @@ export default function RecipeDetails() {
             </div>
 
             {/* Footer/Nutrition */}
-            {/* <footer>
-                <h2 className="text-xl font-semibold mb-2">Nutrition</h2>
-                <p className="text-gray-600 mb-4">
-                    The table below shows nutritional values per serving without the additional fillings.
-                </p>
-                <table className="w-full border-t border-b border-gray-200 divide-y divide-gray-100 text-sm">
-                    <tbody>
-                        <tr className="flex justify-between py-2">
-                            <td>Calories</td>
-                            <td className="font-bold text-pink-700">277kcal</td>
-                        </tr>
-                        <tr className="flex justify-between py-2">
-                            <td>Carbs</td>
-                            <td className="font-bold">0g</td>
-                        </tr>
-                        <tr className="flex justify-between py-2">
-                            <td>Protein</td>
-                            <td className="font-bold">20g</td>
-                        </tr>
-                        <tr className="flex justify-between py-2">
-                            <td>Fat</td>
-                            <td className="font-bold">22g</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </footer> */}
+            <footer className="flex gap-2 justify-end">
+                <Link
+                    to="#"
+                    className="self-end bg-olivine text-white px-2 py-1 rounded-md text-xs font-semibold transition hover:bg-olivine/80 cursor-pointer"
+                >
+                    Edit
+                </Link>
+                <button
+                    onClick={gameDeleteClickHandler}
+                    className="self-end bg-olivine text-white px-2 py-1 rounded-md text-xs font-semibold transition hover:bg-olivine/80 cursor-pointer"
+                >
+                    Delete
+                </button>
+            </footer>
         </article>
 
     )
