@@ -84,9 +84,14 @@ export default function RecipesPage() {
                     </button>
                 </div>
 
-                <div className="grid gap-8 max-w-6xl mx-auto px-4 md:grid-cols-2">
+                <div className={`grid gap-8 max-w-6xl mx-auto px-4 ${recipes.length === 0 ? 'grid-cols-1 place-items-center' : 'md:grid-cols-2'}`}>
 
-                    {recipes.map(recipe => <RecipeItem key={recipe._id} {...recipe} />)}
+                    {
+                        recipes.length > 0 ?
+                            recipes.map(recipe => <RecipeItem key={recipe._id} {...recipe} />)
+                            :
+                            <h3 className="text-3xl text-white font-bold tracking-widest ">No recipes yet.</h3>
+                    }
 
                 </div>
             </div>
