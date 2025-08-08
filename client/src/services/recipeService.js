@@ -11,15 +11,19 @@ export default {
         return recipes;
     },
 
-    getOne(gameId) {
-        return request.get(`${baseUrl}/${gameId}`)
+    getOne(recipeId) {
+        return request.get(`${baseUrl}/${recipeId}`)
     },
 
     create(recipeData) {
         return request.post(baseUrl, recipeData);
     },
 
-    delete(gameId) {
-        return request.delete(`${baseUrl}/${gameId}`)
+    edit(recipeId, recipeData) {
+        return request.put(`${baseUrl}/${recipeId}`, { ...recipeData, _id: recipeId });
+    },
+
+    delete(recipeId) {
+        return request.delete(`${baseUrl}/${recipeId}`)
     },
 };

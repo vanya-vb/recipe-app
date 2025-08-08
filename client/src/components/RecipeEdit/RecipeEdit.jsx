@@ -1,26 +1,32 @@
-import { useNavigate } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 
 import recipeService from "../../services/recipeService";
+import { useEffect, useState } from 'react';
 
-export default function RecipeCreate() {
+export default function RecipeEdit() {
+    const { recipeId } = useParams();
     const navigate = useNavigate();
+    const [recipe, setRecipe] = useState({});
 
-    const submitAction = async (formData) => {
+    // fetch data
+    useEffect(() => {
+        recipeService.getOne(recipeId)
+            .then(setRecipe);
+    }, []);
+
+    // edit handler
+    const formAction = async (formData) => {
         const recipeData = Object.fromEntries(formData);
-        // console.log(recipeData);
 
-        await recipeService.create(recipeData);
-        // console.log(result);
+        await recipeService.edit(recipeId, recipeData);
 
-        navigate('/recipes');
-
-        //TODO: add try/catch 
+        navigate(`/recipes/${recipeId}/details`)
     };
 
     return (
         <section className="w-full min-h-screen bg-gray-100 flex items-center justify-center py-30 px-4 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.60),rgba(0,0,0,0.30)),url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center">
-            <form id="create" action={submitAction} className="w-full max-w-xl bg-white shadow-lg rounded-lg p-8">
-                <h1 className="text-2xl font-bold mb-6 text-center text-gray-800">Add Recipe</h1>
+            <form id="create" action={formAction} className="w-full max-w-xl bg-white shadow-lg rounded-lg p-8">
+                <h1 className="text-2xl font-bold mb-6 text-center text-gray-800">Edit Recipe</h1>
 
                 <div className="space-y-4">
                     <div>
@@ -31,6 +37,7 @@ export default function RecipeCreate() {
                             name="title"
                             placeholder="Enter a recipe title..."
                             className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            defaultValue={recipe.title}
                         />
                     </div>
 
@@ -40,7 +47,7 @@ export default function RecipeCreate() {
                             id="category"
                             name="category"
                             className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                            defaultValue=""
+                            defaultValue={recipe.category}
                             required
                         >
                             <option value="" disabled>-- Choose a category --</option>
@@ -59,6 +66,7 @@ export default function RecipeCreate() {
                             name="imageUrl"
                             placeholder="Upload a photo..."
                             className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            defaultValue={recipe.imageUrl}
                         />
                     </div>
 
@@ -80,6 +88,7 @@ export default function RecipeCreate() {
                             name="instructions"
                             rows="4"
                             className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            defaultValue={recipe.instructions}
                         ></textarea>
                     </div>
                 </div>
@@ -88,7 +97,7 @@ export default function RecipeCreate() {
                     <input
                         className="w-full bg-tangerine text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition-colors cursor-pointer"
                         type="submit"
-                        value="Create Recipe"
+                        value="Edit Recipe"
                     />
                 </div>
             </form>

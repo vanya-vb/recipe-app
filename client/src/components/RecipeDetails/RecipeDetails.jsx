@@ -74,7 +74,7 @@ export default function RecipeDetails() {
             {/* Footer/Nutrition */}
             <footer className="flex gap-2 justify-end">
                 <Link
-                    to="#"
+                    to={`/recipes/${recipeId}/edit`}
                     className="self-end bg-olivine text-white px-2 py-1 rounded-md text-xs font-semibold transition hover:bg-olivine/80 cursor-pointer"
                 >
                     Edit
