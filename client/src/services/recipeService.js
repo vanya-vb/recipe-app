@@ -1,17 +1,17 @@
+import { request } from "../utils/request";
+
 const baseUrl = 'http://localhost:3030/jsonstore/recipes';
 
 export default {
-    async create(recipeData) {
-        const response = await fetch(baseUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(recipeData),
-        });
+    async getAll() {
+        const result = await request.get(baseUrl);
 
-        const result = await response.json();
+        const recipes = Object.values(result);
 
-        return result;
+        return recipes;
+    },
+
+    create(recipeData) {
+        return request.post(baseUrl, recipeData);
     }
 };

@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import recipeService from "../../services/recipeService";
+
 const menu = [
     {
         id: 1,
@@ -45,6 +48,15 @@ const menu = [
 ];
 
 export default function RecipesPage() {
+    const [recipes, setRecipes] = useState([]);
+
+    useEffect(() => {
+        recipeService.getAll()
+            .then(res => setRecipes(res))
+    }, []);
+
+    console.log(recipes)
+
     return (
         <section className="h-screen w-full py-30 bg-[url(https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center">
             <div class="absolute inset-0 backdrop-blur-sm bg-black/30 px-4 py-30 overflow-y-auto">
