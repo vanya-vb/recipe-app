@@ -1,0 +1,44 @@
+{
+    "f12a7cda-e153-4698-8d2c-791b79964f6a": {
+        "title": "buttermilk pancakes",
+        "category": "breakfast",
+        "imageUrl": "/src/components/RecipesPage/images/item-1.jpeg",
+        "instructions": "I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed",
+        "_id": "f12a7cda-e153-4698-8d2c-791b79964f6a"
+    },
+    "62fd6d1c-a63e-440f-9d24-597f98880ea2": {
+        "title": "diner double",
+        "category": "lunch",
+        "imageUrl": "/src/components/RecipesPage/images/item-2.jpeg",
+        "instructions": "vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats",
+        "_id": "62fd6d1c-a63e-440f-9d24-597f98880ea2"
+    },
+    "8eb67233-c8e3-4295-9570-ec29465071c2": {
+        "title": "godzilla milkshake",
+        "category": "snacks",
+        "imageUrl": "/src/components/RecipesPage/images/item-3.jpeg",
+        "instructions": "ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral",
+        "_id": "8eb67233-c8e3-4295-9570-ec29465071c2"
+    },
+    "5b6e6cfd-0e06-49a6-bef6-adb3ccf7ab35": {
+        "title": "country delight",
+        "category": "breakfast",
+        "imageUrl": "/src/components/RecipesPage/images/item-4.jpeg",
+        "instructions": "Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut",
+        "_id": "5b6e6cfd-0e06-49a6-bef6-adb3ccf7ab35"
+    },
+    "765ca44c-980b-4245-ab95-18b9102501e5": {
+        "title": "egg attack",
+        "category": "lunch",
+        "imageUrl": "/src/components/RecipesPage/images/item-5.jpeg",
+        "instructions": "franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up",
+        "_id": "765ca44c-980b-4245-ab95-18b9102501e5"
+    },
+    "203eb978-30b4-4d07-b77b-9a7374fd6839": {
+        "title": "oreo dream",
+        "category": "snacks",
+        "imageUrl": "/src/components/RecipesPage/images/item-6.jpeg",
+        "instructions": "Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday",
+        "_id": "203eb978-30b4-4d07-b77b-9a7374fd6839"
+    }
+}
