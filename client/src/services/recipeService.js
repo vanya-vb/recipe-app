@@ -11,6 +11,10 @@ export default {
         return recipes;
     },
 
+    getOne(gameId) {
+        return request.get(`${baseUrl}/${gameId}`)
+    },
+
     create(recipeData) {
         return request.post(baseUrl, recipeData);
     }

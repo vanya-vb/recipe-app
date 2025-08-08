@@ -19,7 +19,7 @@ function App() {
 					<Route path='/recipes/create' element={<RecipeCreate />} />
 					<Route path='/login' element={<LoginPage />} />
 					<Route path='/register' element={<RegisterPage />} />
-					{/* <Route path='/recipes/:id' element={<RecipeDetails />} /> */}
+					<Route path='/recipes/:recipeId/details' element={<RecipeDetails />} />
 				</Routes>
 			</main>
 		</>
