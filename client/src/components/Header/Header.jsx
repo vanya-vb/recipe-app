@@ -1,7 +1,7 @@
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useState } from 'react'
-import { Link } from 'react-router'
+import { Link, NavLink } from 'react-router'
 
 import logoImg from '/src/assets/logo.png'
 
@@ -44,9 +44,14 @@ export default function Header() {
                 <div className="hidden lg:flex lg:gap-x-12">
 
                     {navigation.map((item) => (
-                        <Link key={item.name} to={item.href} className="text-sm/6 font-semibold text-white hover:text-tangerine ">
+                        <NavLink
+                            key={item.name}
+                            to={item.href}
+                            end
+                            className={({ isActive }) => `text-sm/6 font-semibold ${isActive ? "text-tangerine border-b" : "text-white"} hover:text-tangerine`}
+                        >
                             {item.name}
-                        </Link>
+                        </NavLink>
                     ))}
 
                 </div>
