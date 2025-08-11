@@ -10,6 +10,7 @@ import RegisterPage from './components/RegisterPage/RegisterPage'
 import RecipeCreate from './components/RecipeCreate/RecipeCreate'
 import RecipeEdit from './components/RecipeEdit/RecipeEdit'
 import NotFound from './components/NotFound/NotFound'
+import Footer from './components/Footer/Footer'
 
 function App() {
 	const [email, setEmail] = useState('');
@@ -33,6 +34,8 @@ function App() {
 					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</main>
+
+			<Footer />
 		</>
 	)
 }
