@@ -36,7 +36,7 @@ export default function RecipeEdit() {
                             id="title"
                             name="title"
                             placeholder="Enter a recipe title..."
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
                             defaultValue={recipe.title}
                         />
                     </div>
@@ -46,7 +46,7 @@ export default function RecipeEdit() {
                         <select
                             id="category"
                             name="category"
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
                             defaultValue={recipe.category}
                             required
                         >
@@ -65,7 +65,7 @@ export default function RecipeEdit() {
                             id="imageUrl"
                             name="imageUrl"
                             placeholder="Upload a photo..."
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
                             defaultValue={recipe.imageUrl}
                         />
                     </div>
@@ -87,7 +87,7 @@ export default function RecipeEdit() {
                             id="instructions"
                             name="instructions"
                             rows="4"
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
                             defaultValue={recipe.instructions}
                         ></textarea>
                     </div>
@@ -95,7 +95,7 @@ export default function RecipeEdit() {
 
                 <div className="mt-6">
                     <input
-                        className="w-full bg-tangerine text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-700 transition-colors cursor-pointer"
+                        className="w-full bg-tangerine text-white font-semibold py-2 px-4 rounded-md hover:bg-tangerine/70 transition-colors cursor-pointer"
                         type="submit"
                         value="Edit Recipe"
                     />
