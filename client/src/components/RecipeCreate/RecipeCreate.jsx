@@ -18,7 +18,7 @@ export default function RecipeCreate() {
     };
 
     return (
-        <section className="w-screen h-screen flex items-center justify-center pt-30 pb-10 px-4 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.60),rgba(0,0,0,0.30)),url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center">
+        <section className="w-screen h-screen flex items-center justify-center pt-30 pb-20 px-4 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.60),rgba(0,0,0,0.30)),url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center">
             <form id="create" action={submitAction} className="w-full max-w-xl bg-white shadow-lg rounded-lg p-6">
                 <h1 className="text-2xl font-bold mb-6 text-center text-night cap capitalize">add recipe</h1>
 
