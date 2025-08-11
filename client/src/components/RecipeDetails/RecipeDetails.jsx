@@ -4,7 +4,7 @@ import recipeService from "../../services/recipeService";
 import CommentsDisplay from "../CommentsDisplay/CommentsDisplay";
 import CommentsCreate from "../CommentsCreate/CommentsCreate";
 
-export default function RecipeDetails() {
+export default function RecipeDetails({ email }) {
     const [recipe, setRecipe] = useState({});
     const { recipeId } = useParams();
     const navigate = useNavigate();
@@ -90,7 +90,8 @@ export default function RecipeDetails() {
                 <hr className="border-gray-200" />
 
                 <CommentsDisplay />
-                <CommentsCreate />
+                
+                <CommentsCreate email={email} />
 
             </article>
         </>

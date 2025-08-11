@@ -1,10 +1,16 @@
-export default function CommentsCreate() {
+export default function CommentsCreate({ email }) {
+    const commentAction = (formData) => {
+        const comment = formData.get('comment');
+
+        console.log(email, comment)
+    };
+
     return (
         <div className="w-full mx-auto">
             <label className="block text-sm font-medium text-gray-700 mb-2">
                 Add new comment:
             </label>
-            <form className="space-y-4">
+            <form className="space-y-4" action={commentAction}>
                 <textarea
                     name="comment"
                     placeholder="Comment...."

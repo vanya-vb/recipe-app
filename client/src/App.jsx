@@ -27,7 +27,7 @@ function App() {
 					<Route path='/recipes/create' element={<RecipeCreate />} />
 					<Route path='/login' element={<LoginPage onLogin={loginHandler} />} />
 					<Route path='/register' element={<RegisterPage />} />
-					<Route path='/recipes/:recipeId/details' element={<RecipeDetails />} />
+					<Route path='/recipes/:recipeId/details' element={<RecipeDetails email={email} />} />
 					<Route path='/recipes/:recipeId/edit' element={<RecipeEdit />} />
 				</Routes>
 			</main>
