@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router'
+import { useState } from 'react'
 
 import Header from './components/Header/Header'
 import HeroSection from './components/HeroSection/HeroSection'
@@ -10,6 +11,12 @@ import RecipeCreate from './components/RecipeCreate/RecipeCreate'
 import RecipeEdit from './components/RecipeEdit/RecipeEdit'
 
 function App() {
+	const [email, setEmail] = useState('');
+
+	const loginHandler = (email) => {
+		setEmail(email);
+	};
+
 	return (
 		<>
 			<Header />
@@ -18,7 +25,7 @@ function App() {
 					<Route path='/' element={<HeroSection />} />
 					<Route path='/recipes' element={<RecipesPage />} />
 					<Route path='/recipes/create' element={<RecipeCreate />} />
-					<Route path='/login' element={<LoginPage />} />
+					<Route path='/login' element={<LoginPage onLogin={loginHandler} />} />
 					<Route path='/register' element={<RegisterPage />} />
 					<Route path='/recipes/:recipeId/details' element={<RecipeDetails />} />
 					<Route path='/recipes/:recipeId/edit' element={<RecipeEdit />} />
