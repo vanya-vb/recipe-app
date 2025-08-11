@@ -3,18 +3,22 @@ import { useParams, Link, useNavigate } from "react-router"
 import recipeService from "../../services/recipeService";
 import CommentsDisplay from "../CommentsDisplay/CommentsDisplay";
 import CommentsCreate from "../CommentsCreate/CommentsCreate";
+import commentService from "../../services/commentService";
 
 export default function RecipeDetails({ email }) {
     const [recipe, setRecipe] = useState({});
+    const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
     const navigate = useNavigate();
 
     // fetch data
     useEffect(() => {
-        (async () => {
-            const result = await recipeService.getOne(recipeId);
-            setRecipe(result);
-        })()
+        recipeService.getOne(recipeId)
+            .then(result => setRecipe(result));
+
+        commentService.getAll(recipeId)
+            .then(result => setComments(result));
+
     }, [recipeId]);
 
     // delete handler
@@ -28,6 +32,10 @@ export default function RecipeDetails({ email }) {
         await recipeService.delete(recipeId);
 
         navigate('/recipes')
+    };
+
+    const commentCreateHandler = (newComment) => {
+        setComments(state => [...state, newComment]);
     };
 
     return (
@@ -89,9 +97,13 @@ export default function RecipeDetails({ email }) {
                 </div>
                 <hr className="border-gray-200" />
 
-                <CommentsDisplay />
+                <CommentsDisplay comments={comments} />
 
-                <CommentsCreate email={email} recipeId={recipeId} />
+                <CommentsCreate
+                    email={email}
+                    recipeId={recipeId}
+                    onCreate={commentCreateHandler}
+                />
 
             </article>
         </>
