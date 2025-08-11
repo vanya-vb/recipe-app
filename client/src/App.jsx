@@ -9,6 +9,7 @@ import RecipesPage from './components/RecipesPage/RecipesPage'
 import RegisterPage from './components/RegisterPage/RegisterPage'
 import RecipeCreate from './components/RecipeCreate/RecipeCreate'
 import RecipeEdit from './components/RecipeEdit/RecipeEdit'
+import NotFound from './components/NotFound/NotFound'
 
 function App() {
 	const [email, setEmail] = useState('');
@@ -29,6 +30,7 @@ function App() {
 					<Route path='/register' element={<RegisterPage />} />
 					<Route path='/recipes/:recipeId/details' element={<RecipeDetails email={email} />} />
 					<Route path='/recipes/:recipeId/edit' element={<RecipeEdit />} />
+					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</main>
 		</>
