@@ -90,8 +90,8 @@ export default function RecipeDetails({ email }) {
                 <hr className="border-gray-200" />
 
                 <CommentsDisplay />
-                
-                <CommentsCreate email={email} />
+
+                <CommentsCreate email={email} recipeId={recipeId} />
 
             </article>
         </>
