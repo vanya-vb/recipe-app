@@ -9,12 +9,15 @@ export default function RecipeCreate() {
         const recipeData = Object.fromEntries(formData);
         // console.log(recipeData);
 
-        await recipeService.create(recipeData);
-        // console.log(result);
+        recipeData.ingredients = recipeData.ingredients.split(',').map(item => item.trim()).filter(item => item !== '');
+        recipeData.instructions = recipeData.instructions.split(',').map(item => item.trim()).filter(item => item !== '');
 
-        navigate('/recipes');
-
-        //TODO: add try/catch 
+        try {
+            await recipeService.create(recipeData);
+            navigate('/recipes');
+        } catch (err) {
+            console.error("Error creating recipe:", err);
+        }
     };
 
     return (

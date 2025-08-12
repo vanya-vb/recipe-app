@@ -16,7 +16,7 @@ export default function RecipeDetails({ email }) {
     // fetch data
     useEffect(() => {
         recipeService.getOne(recipeId)
-            .then(result => setRecipe(result));
+            .then(result => {setRecipe(result)});
 
         commentService.getAll(recipeId)
             .then(result => setComments(result));
@@ -40,10 +40,6 @@ export default function RecipeDetails({ email }) {
         setComments(state => [...state, newComment]);
     };
 
-    if(!recipe.ingredients || !recipe.instructions) {
-        return <p>Loading...</p>
-    }
-
     return (
         <article className="max-w-2xl mx-auto my-30 p-8 pb-15 bg-white rounded-lg shadow-md space-y-8 text-gray-800">
             <div className="overflow-hidden rounded-lg">
@@ -61,7 +57,7 @@ export default function RecipeDetails({ email }) {
                 <div className="mt-6 bg-olivine/20 p-4 rounded-md border-l-4 border-green-hunter">
                     <h2 className="text-xl font-semibold mb-2 underline">Ingredients:</h2>
                     <ul className="list-disc list-inside space-y-1 text-gray-700">
-                        {recipe.ingredients.map((ingredient, i) => <li key={i}>{ingredient}</li>)}
+                        {recipe.ingredients?.map((ingredient, i) => <li key={i}>{ingredient}</li>)}
                     </ul>
                 </div>
             </header>
@@ -75,7 +71,7 @@ export default function RecipeDetails({ email }) {
                 <div>
                     <h2 className="text-xl font-semibold mb-2 underline">Instructions:</h2>
                     <ul className="list-decimal list-inside space-y-3 text-gray-700">
-                        {recipe.instructions.map((instruction, i) => <li key={i}>{instruction}</li>)}
+                        {recipe.instructions?.map((instruction, i) => <li key={i}>{instruction}</li>)}
                     </ul>
                 </div>
 
