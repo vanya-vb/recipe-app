@@ -18,9 +18,15 @@ export default function RecipeEdit() {
     const formAction = async (formData) => {
         const recipeData = Object.fromEntries(formData);
 
-        await recipeService.edit(recipeId, recipeData);
+        recipeData.ingredients = recipeData.ingredients.split(',').map(item => item.trim()).filter(item => item !== '');
+        recipeData.instructions = recipeData.instructions.split(',').map(item => item.trim()).filter(item => item !== '');
 
-        navigate(`/recipes/${recipeId}/details`)
+        try {
+            await recipeService.edit(recipeId, recipeData);
+            navigate(`/recipes/${recipeId}/details`);
+        } catch(err) {
+            console.error("Error editing recipe:", err);
+        }
     };
 
     return (
@@ -36,7 +42,7 @@ export default function RecipeEdit() {
                             id="title"
                             name="title"
                             placeholder="Enter a recipe title..."
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
+                            className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
                             defaultValue={recipe.title}
                         />
                     </div>
@@ -46,7 +52,7 @@ export default function RecipeEdit() {
                         <select
                             id="category"
                             name="category"
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
+                            className=" text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
                             defaultValue={recipe.category}
                             required
                         >
@@ -65,21 +71,22 @@ export default function RecipeEdit() {
                             id="imageUrl"
                             name="imageUrl"
                             placeholder="Upload a photo..."
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
+                            className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
                             defaultValue={recipe.imageUrl}
                         />
                     </div>
 
-                    {/* <div>
-                        <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700">Ingredients:</label>
-                        <input
-                            type="text"
+                    <div>
+                        <label htmlFor="instructions" className="block text-sm font-medium text-night">Ingredients:</label>
+                        <textarea
                             id="ingredients"
                             name="ingredients"
-                            placeholder="Add an ingredient..."
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                        />
-                    </div> */}
+                            rows="2"
+                            placeholder="Add the ingrediets, separated by comma"
+                            className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine focus:border-tangerine"
+                            defaultValue={recipe.ingredients}
+                        ></textarea>
+                    </div>
 
                     <div>
                         <label htmlFor="instructions" className="block text-sm font-medium text-gray-700">Instructions:</label>
@@ -87,7 +94,7 @@ export default function RecipeEdit() {
                             id="instructions"
                             name="instructions"
                             rows="4"
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
+                            className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
                             defaultValue={recipe.instructions}
                         ></textarea>
                     </div>
