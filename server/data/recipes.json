@@ -141,5 +141,44 @@
             "Serve immediately as a refreshing salad."
         ],
         "_id": "203eb978-30b4-4d07-b77b-9a7374fd6839"
+    },
+    "9d1f4631-5ddd-4e89-a06d-26130ed0264b": {
+        "title": "Blueberry Banana Smoothie",
+        "category": "breakfast",
+        "imageUrl": "https://cdn.dummyjson.com/recipe-images/25.webp",
+        "ingredients": [
+            "Blueberries - fresh or frozen",
+            "Banana - peeled and sliced",
+            "Greek yogurt",
+            "Almond milk",
+            "Honey",
+            "Chia seeds (optional)"
+        ],
+        "instructions": [
+            "In a blender, combine blueberries, banana, Greek yogurt, almond milk, and honey.",
+            "Blend until smooth and creamy.",
+            "Add chia seeds for extra nutrition and blend briefly.",
+            "Pour into a glass and enjoy this nutritious Blueberry Banana Smoothie."
+        ],
+        "_id": "9d1f4631-5ddd-4e89-a06d-26130ed0264b"
+    },
+    "ab69efb5-fd02-4ae6-9873-fa2076fc103e": {
+        "title": "Mexican Street Corn (Elote)",
+        "category": "snacks",
+        "imageUrl": "https://cdn.dummyjson.com/recipe-images/26.webp",
+        "ingredients": [
+            "Corn on the cob",
+            "Mayonnaise",
+            "Cotija cheese - crumbled",
+            "Chili powder",
+            "Lime wedges"
+        ],
+        "instructions": [
+            "Grill or roast corn on the cob until kernels are charred.",
+            "Brush each cob with mayonnaise, then sprinkle with crumbled Cotija cheese and chili powder.",
+            "Serve with lime wedges for squeezing over the top.",
+            "Enjoy this delicious and flavorful Mexican Street Corn."
+        ],
+        "_id": "ab69efb5-fd02-4ae6-9873-fa2076fc103e"
     }
 }

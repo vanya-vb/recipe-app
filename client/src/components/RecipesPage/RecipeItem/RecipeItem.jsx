@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
 
 export default function RecipeItem({ _id, title, category, imageUrl, ingredients }) {
-    // ingredients = ingredients.join(', ')
+    ingredients = ingredients.join(', ');
 
     return (
         <article className="grid gap-4 md:grid-cols-[200px_1fr] capitalize">

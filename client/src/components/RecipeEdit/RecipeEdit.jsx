@@ -19,7 +19,7 @@ export default function RecipeEdit() {
         const recipeData = Object.fromEntries(formData);
 
         recipeData.ingredients = recipeData.ingredients.split(',').map(item => item.trim()).filter(item => item !== '');
-        recipeData.instructions = recipeData.instructions.split(',').map(item => item.trim()).filter(item => item !== '');
+        recipeData.instructions = recipeData.instructions.split('.').map(item => item.trim()).filter(item => item !== '');
 
         try {
             await recipeService.edit(recipeId, recipeData);
