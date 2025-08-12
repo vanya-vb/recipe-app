@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router"
+
 import recipeService from "../../services/recipeService";
+
 import CommentsDisplay from "../CommentsDisplay/CommentsDisplay";
 import CommentsCreate from "../CommentsCreate/CommentsCreate";
 import commentService from "../../services/commentService";
@@ -38,6 +40,10 @@ export default function RecipeDetails({ email }) {
         setComments(state => [...state, newComment]);
     };
 
+    if(!recipe.ingredients || !recipe.instructions) {
+        return <p>Loading...</p>
+    }
+
     return (
         <article className="max-w-2xl mx-auto my-30 p-8 pb-15 bg-white rounded-lg shadow-md space-y-8 text-gray-800">
             <div className="overflow-hidden rounded-lg">
@@ -55,11 +61,7 @@ export default function RecipeDetails({ email }) {
                 <div className="mt-6 bg-olivine/20 p-4 rounded-md border-l-4 border-green-hunter">
                     <h2 className="text-xl font-semibold mb-2 underline">Ingredients:</h2>
                     <ul className="list-disc list-inside space-y-1 text-gray-700">
-                        <li>item 1</li>
-                        <li>item 2</li>
-                        <li>item 3</li>
-                        <li>item 4</li>
-                        <li>item 5</li>
+                        {recipe.ingredients.map((ingredient, i) => <li key={i}>{ingredient}</li>)}
                     </ul>
                 </div>
             </header>
@@ -72,9 +74,9 @@ export default function RecipeDetails({ email }) {
                 {/* Instructions */}
                 <div>
                     <h2 className="text-xl font-semibold mb-2 underline">Instructions:</h2>
-                    <p className="list-decimal list-inside space-y-3 text-gray-700">
-                        {recipe.instructions}
-                    </p>
+                    <ul className="list-decimal list-inside space-y-3 text-gray-700">
+                        {recipe.instructions.map((instruction, i) => <li key={i}>{instruction}</li>)}
+                    </ul>
                 </div>
 
             </div>

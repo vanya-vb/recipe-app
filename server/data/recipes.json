@@ -1,44 +1,145 @@
 {
     "f12a7cda-e153-4698-8d2c-791b79964f6a": {
-        "title": "buttermilk pancakes",
-        "category": "breakfast",
-        "imageUrl": "/src/components/RecipesPage/images/item-1.jpeg",
-        "instructions": "I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed",
+        "title": "Classic Margherita Pizza",
+        "category": "dinner",
+        "imageUrl": "https://cdn.dummyjson.com/recipe-images/1.webp",
+        "ingredients": [
+            "Pizza dough",
+            "Tomato sauce",
+            "Fresh mozzarella cheese",
+            "Fresh basil leaves",
+            "Olive oil",
+            "Salt and pepper to taste"
+        ],
+        "instructions": [
+            "Preheat the oven to 475°F (245°C).",
+            "Roll out the pizza dough and spread tomato sauce evenly.",
+            "Top with slices of fresh mozzarella and fresh basil leaves.",
+            "Drizzle with olive oil and season with salt and pepper.",
+            "Bake in the preheated oven for 12-15 minutes or until the crust is golden brown.",
+            "Slice and serve hot."
+        ],
         "_id": "f12a7cda-e153-4698-8d2c-791b79964f6a"
     },
     "62fd6d1c-a63e-440f-9d24-597f98880ea2": {
-        "title": "diner double",
+        "title": "Vegetarian Stir-Fry",
         "category": "lunch",
-        "imageUrl": "/src/components/RecipesPage/images/item-2.jpeg",
-        "instructions": "vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats",
+        "imageUrl": "https://cdn.dummyjson.com/recipe-images/2.webp",
+        "ingredients": [
+            "Tofu, cubed",
+            "Broccoli florets",
+            "Carrots, sliced",
+            "Bell peppers, sliced",
+            "Soy sauce",
+            "Ginger, minced",
+            "Garlic, minced",
+            "Sesame oil",
+            "Cooked rice for serving"
+        ],
+        "instructions": [
+            "In a wok, heat sesame oil over medium-high heat.",
+            "Add minced ginger and garlic, sauté until fragrant.",
+            "Add cubed tofu and stir-fry until golden brown.",
+            "Add broccoli, carrots, and bell peppers. Cook until vegetables are tender-crisp.",
+            "Pour soy sauce over the stir-fry and toss to combine.",
+            "Serve over cooked rice."
+        ],
         "_id": "62fd6d1c-a63e-440f-9d24-597f98880ea2"
     },
     "8eb67233-c8e3-4295-9570-ec29465071c2": {
-        "title": "godzilla milkshake",
+        "title": "Chocolate Chip Cookies",
         "category": "snacks",
-        "imageUrl": "/src/components/RecipesPage/images/item-3.jpeg",
-        "instructions": "ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral",
+        "imageUrl": "https://cdn.dummyjson.com/recipe-images/3.webp",
+        "ingredients": [
+            "All-purpose flour",
+            "Butter, softened",
+            "Brown sugar",
+            "White sugar",
+            "Eggs",
+            "Vanilla extract",
+            "Baking soda",
+            "Salt",
+            "Chocolate chips"
+        ],
+        "instructions": [
+            "Preheat the oven to 350°F (175°C).",
+            "In a bowl, cream together softened butter, brown sugar, and white sugar.",
+            "Beat in eggs one at a time, then stir in vanilla extract.",
+            "Combine flour, baking soda, and salt. Gradually add to the wet ingredients.",
+            "Fold in chocolate chips.",
+            "Drop rounded tablespoons of dough onto ungreased baking sheets.",
+            "Bake for 10-12 minutes or until edges are golden brown.",
+            "Allow cookies to cool on the baking sheet for a few minutes before transferring to a wire rack."
+        ],
         "_id": "8eb67233-c8e3-4295-9570-ec29465071c2"
     },
     "5b6e6cfd-0e06-49a6-bef6-adb3ccf7ab35": {
-        "title": "country delight",
-        "category": "breakfast",
-        "imageUrl": "/src/components/RecipesPage/images/item-4.jpeg",
-        "instructions": "Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut",
+        "title": "Chicken Alfredo Pasta",
+        "category": "dinner",
+        "imageUrl": "https://cdn.dummyjson.com/recipe-images/4.webp",
+        "ingredients": [
+            "Fettuccine pasta",
+            "Chicken breast, sliced",
+            "Heavy cream",
+            "Parmesan cheese, grated",
+            "Garlic, minced",
+            "Butter",
+            "Salt and pepper to taste",
+            "Fresh parsley for garnish"
+        ],
+        "instructions": [
+            "Cook fettuccine pasta according to package instructions.",
+            "In a pan, sauté sliced chicken in butter until fully cooked.",
+            "Add minced garlic and cook until fragrant.",
+            "Pour in heavy cream and grated Parmesan cheese. Stir until the cheese is melted.",
+            "Season with salt and pepper to taste.",
+            "Combine the Alfredo sauce with cooked pasta.",
+            "Garnish with fresh parsley before serving."
+        ],
         "_id": "5b6e6cfd-0e06-49a6-bef6-adb3ccf7ab35"
     },
     "765ca44c-980b-4245-ab95-18b9102501e5": {
-        "title": "egg attack",
+        "title": "Mango Salsa Chicken",
         "category": "lunch",
-        "imageUrl": "/src/components/RecipesPage/images/item-5.jpeg",
-        "instructions": "franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up",
+        "imageUrl": "https://cdn.dummyjson.com/recipe-images/5.webp",
+        "ingredients": [
+            "Chicken thighs",
+            "Mango, diced",
+            "Red onion, finely chopped",
+            "Cilantro, chopped",
+            "Lime juice",
+            "Jalapeño, minced",
+            "Salt and pepper to taste",
+            "Cooked rice for serving"
+        ],
+        "instructions": [
+            "Season chicken thighs with salt and pepper.",
+            "Grill or bake chicken until fully cooked.",
+            "In a bowl, combine diced mango, chopped red onion, cilantro, minced jalapeño, and lime juice.",
+            "Dice the cooked chicken and mix it with the mango salsa.",
+            "Serve over cooked rice."
+        ],
         "_id": "765ca44c-980b-4245-ab95-18b9102501e5"
     },
     "203eb978-30b4-4d07-b77b-9a7374fd6839": {
-        "title": "oreo dream",
-        "category": "snacks",
-        "imageUrl": "/src/components/RecipesPage/images/item-6.jpeg",
-        "instructions": "Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday",
+        "title": "Caprese Salad",
+        "category": "lunch",
+        "imageUrl": "https://cdn.dummyjson.com/recipe-images/9.webp",
+        "ingredients": [
+            "Tomatoes, sliced",
+            "Fresh mozzarella cheese, sliced",
+            "Fresh basil leaves",
+            "Balsamic glaze",
+            "Extra virgin olive oil",
+            "Salt and pepper to taste"
+        ],
+        "instructions": [
+            "Arrange alternating slices of tomatoes and fresh mozzarella on a serving platter.",
+            "Tuck fresh basil leaves between the slices.",
+            "Drizzle with balsamic glaze and extra virgin olive oil.",
+            "Season with salt and pepper to taste.",
+            "Serve immediately as a refreshing salad."
+        ],
         "_id": "203eb978-30b4-4d07-b77b-9a7374fd6839"
     }
 }
