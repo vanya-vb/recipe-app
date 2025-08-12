@@ -30,7 +30,7 @@ export default function RecipeCreate() {
                             id="title"
                             name="title"
                             placeholder="Enter a recipe title..."
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:tangerine focus:border-tangerine"
+                            className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:tangerine focus:border-tangerine"
                         />
                     </div>
 
@@ -39,7 +39,7 @@ export default function RecipeCreate() {
                         <select
                             id="category"
                             name="category"
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine focus:border-blue-500"
+                            className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine focus:border-blue-500"
                             defaultValue=""
                             required
                         >
@@ -57,21 +57,21 @@ export default function RecipeCreate() {
                             type="text"
                             id="imageUrl"
                             name="imageUrl"
-                            placeholder="Upload a photo..."
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine focus:border-tangerine"
+                            placeholder="Paste an image url"
+                            className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine focus:border-tangerine"
                         />
                     </div>
 
-                    {/* <div>
-                        <label htmlFor="imageUrl" className="block text-sm font-medium text-gray-700">Ingredients:</label>
-                        <input
-                            type="text"
+                    <div>
+                        <label htmlFor="instructions" className="block text-sm font-medium text-night">Ingredients:</label>
+                        <textarea
                             id="ingredients"
                             name="ingredients"
-                            placeholder="Add an ingredient..."
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                        />
-                    </div> */}
+                            rows="2"
+                            placeholder="Add the ingrediets, separated by comma"
+                            className=" text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine focus:border-tangerine"
+                        ></textarea>
+                    </div>
 
                     <div>
                         <label htmlFor="instructions" className="block text-sm font-medium text-night">Instructions:</label>
@@ -79,7 +79,8 @@ export default function RecipeCreate() {
                             id="instructions"
                             name="instructions"
                             rows="4"
-                            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine focus:border-tangerine"
+                            placeholder="Enter the instructions, separated by comma"
+                            className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine focus:border-tangerine"
                         ></textarea>
                     </div>
                 </div>
