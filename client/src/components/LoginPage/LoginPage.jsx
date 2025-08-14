@@ -1,9 +1,11 @@
-import { useActionState } from 'react';
+import { useActionState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router'
 import { useLogin } from '../../api/authApi';
+import { UserContext } from '../../contexts/UserContext';
 
-export default function LoginPage({ onLogin }) {
+export default function LoginPage() {
     const navigate = useNavigate();
+    const { userLoginHandler } = useContext(UserContext);
     const { login } = useLogin();
 
     const loginHandler = async (prevState, formData) => {
@@ -11,7 +13,7 @@ export default function LoginPage({ onLogin }) {
 
         const authData = await login(values.email, values.password);
 
-        onLogin(authData);
+        userLoginHandler(authData);
 
         navigate('/recipes');
     };

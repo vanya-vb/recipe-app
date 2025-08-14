@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router"
 
 import recipeService from "../../services/recipeService";
+import { UserContext } from "../../contexts/UserContext";
 
 import CommentsDisplay from "../CommentsDisplay/CommentsDisplay";
 import CommentsCreate from "../CommentsCreate/CommentsCreate";
 import commentService from "../../services/commentService";
 
-export default function RecipeDetails({ email }) {
+export default function RecipeDetails() {
+    const { email } = useContext(UserContext);
     const [recipe, setRecipe] = useState({});
     const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
@@ -16,7 +18,7 @@ export default function RecipeDetails({ email }) {
     // fetch data
     useEffect(() => {
         recipeService.getOne(recipeId)
-            .then(result => {setRecipe(result)});
+            .then(result => { setRecipe(result) });
 
         commentService.getAll(recipeId)
             .then(result => setComments(result));
