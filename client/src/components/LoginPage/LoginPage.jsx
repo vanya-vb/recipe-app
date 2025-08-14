@@ -1,13 +1,22 @@
+import { useActionState } from 'react';
 import { Link, useNavigate } from 'react-router'
 
 export default function LoginPage({ onLogin }) {
     const navigate = useNavigate();
-    const loginAction = (formData) => {
-        const email = formData.get('email');
-        onLogin(email);
+
+    const loginHandler = (prevState, formData) => {
+        const values = Object.fromEntries(formData);
+
+        onLogin(values.email);
 
         navigate('/recipes');
-    }
+
+        return values;
+    };
+
+    const [values, loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' });
+
+    // console.log(values);
 
     return (
         <section className="flex h-screen flex-col justify-center px-6 py-38 lg:px-8 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.85),rgba(0,0,0,0.9)),url('https://images.unsplash.com/photo-1514986888952-8cd320577b68?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-top bg-cover">
@@ -60,6 +69,7 @@ export default function LoginPage({ onLogin }) {
                         <button
                             type="submit"
                             className="flex w-full justify-center rounded-md bg-olivine px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-olivine/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olivine-70"
+                            disabled={isPending}
                         >
                             Sign In
                         </button>
