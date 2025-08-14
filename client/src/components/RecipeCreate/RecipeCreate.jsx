@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router'
-
-import recipeService from "../../services/recipeService";
+import { useCreateRecipe } from '../../api/recipeApi';
 
 export default function RecipeCreate() {
     const navigate = useNavigate();
+    const { create: createRecipe } = useCreateRecipe();
 
     const submitAction = async (formData) => {
         const recipeData = Object.fromEntries(formData);
@@ -13,7 +13,7 @@ export default function RecipeCreate() {
         recipeData.instructions = recipeData.instructions.split('.').map(item => item.trim()).filter(item => item !== '');
 
         try {
-            await recipeService.create(recipeData);
+            await createRecipe(recipeData);
             navigate('/recipes');
         } catch (err) {
             console.error("Error creating recipe:", err);
@@ -29,7 +29,7 @@ export default function RecipeCreate() {
                 <h1 className="text-2xl font-bold mb-6 text-center text-night cap capitalize">add recipe</h1>
 
                 <div className="space-y-4">
-                    
+
                     <div>
                         <label htmlFor="title" className="block text-sm font-medium text-night">Title:</label>
                         <input

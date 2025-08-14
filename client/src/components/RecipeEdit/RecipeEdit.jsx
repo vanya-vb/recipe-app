@@ -1,18 +1,11 @@
 import { useNavigate, useParams } from 'react-router'
-
-import recipeService from "../../services/recipeService";
-import { useEffect, useState } from 'react';
+import { useEditRecipe, useRecipe } from '../../api/recipeApi';
 
 export default function RecipeEdit() {
-    const { recipeId } = useParams();
     const navigate = useNavigate();
-    const [recipe, setRecipe] = useState({});
-
-    // fetch data
-    useEffect(() => {
-        recipeService.getOne(recipeId)
-            .then(setRecipe);
-    }, []);
+    const { recipeId } = useParams();
+    const { recipe } = useRecipe(recipeId);
+    const { edit } = useEditRecipe();
 
     // edit handler
     const formAction = async (formData) => {
@@ -22,8 +15,9 @@ export default function RecipeEdit() {
         recipeData.instructions = recipeData.instructions.split('.').map(item => item.trim()).filter(item => item !== '');
 
         try {
-            await recipeService.edit(recipeId, recipeData);
+            await edit(recipeId, recipeData);
             navigate(`/recipes/${recipeId}/details`);
+            
         } catch (err) {
             console.error("Error editing recipe:", err);
         }

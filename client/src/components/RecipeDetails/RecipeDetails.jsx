@@ -1,41 +1,37 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router"
 
-import recipeService from "../../services/recipeService";
-import { UserContext } from "../../contexts/UserContext";
+import { useDeleteRecipe, useRecipe } from "../../api/recipeApi";
+import useAuth from "../../hooks/useAuth";
 
 import CommentsDisplay from "../CommentsDisplay/CommentsDisplay";
 import CommentsCreate from "../CommentsCreate/CommentsCreate";
 import commentService from "../../services/commentService";
 
 export default function RecipeDetails() {
-    const { email } = useContext(UserContext);
-    const [recipe, setRecipe] = useState({});
+    const navigate = useNavigate();
+    const { email } = useAuth();
     const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
-    const navigate = useNavigate();
+    const { recipe } = useRecipe(recipeId);
+    const { deleteRecipe } = useDeleteRecipe();
 
-    // fetch data
     useEffect(() => {
-        recipeService.getOne(recipeId)
-            .then(result => { setRecipe(result) });
-
         commentService.getAll(recipeId)
             .then(result => setComments(result));
-
     }, [recipeId]);
 
     // delete handler
-    const gameDeleteClickHandler = async () => {
+    const recipeDeleteClickHandler = async () => {
         const hasConfirm = confirm(`Are you sure you want to delete ${recipe.title} recipe?`);
 
         if (!hasConfirm) {
             return;
         }
 
-        await recipeService.delete(recipeId);
+        await deleteRecipe(recipeId);
 
-        navigate('/recipes')
+        navigate('/recipes');
     };
 
     const commentCreateHandler = (newComment) => {
@@ -87,7 +83,7 @@ export default function RecipeDetails() {
                     Edit
                 </Link>
                 <button
-                    onClick={gameDeleteClickHandler}
+                    onClick={recipeDeleteClickHandler}
                     className="self-end bg-olivine text-white px-2 py-1 rounded-md text-xs font-semibold transition hover:bg-olivine/80 cursor-pointer"
                 >
                     Delete

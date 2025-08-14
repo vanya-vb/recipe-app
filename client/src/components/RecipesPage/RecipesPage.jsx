@@ -1,29 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router";
-
-import recipeService from "../../services/recipeService";
+import { useRecipes } from "../../api/recipeApi";
 
 import RecipeItem from "./RecipeItem/RecipeItem";
 
 export default function RecipesPage() {
-    const [recipes, setRecipes] = useState([]);
+    const { recipes } = useRecipes();
     const [displayRecipes, setDisplayRecipes] = useState([]);
-
     const [searchParams] = useSearchParams();
     // console.log(Object.fromEntries(searchParams));
 
     const sortOptions = [
-        { name: 'All', href: '/recipes', current: true },
-        { name: 'Breakfast', href: '/recipes?meal=breakfast', current: false },
-        { name: 'Lunch', href: '/recipes?meal=lunch', current: false },
-        { name: 'Dinner', href: '/recipes?meal=dinner', current: false },
-        { name: 'Snacks', href: '/recipes?meal=snacks', current: false },
+        { name: 'All', href: '/recipes' },
+        { name: 'Breakfast', href: '/recipes?meal=breakfast' },
+        { name: 'Lunch', href: '/recipes?meal=lunch' },
+        { name: 'Dinner', href: '/recipes?meal=dinner' },
+        { name: 'Snacks', href: '/recipes?meal=snacks' },
     ];
-
-    useEffect(() => {
-        recipeService.getAll()
-            .then(res => setRecipes(res))
-    }, []);
 
     useEffect(() => {
         const filter = Object.fromEntries(searchParams);
