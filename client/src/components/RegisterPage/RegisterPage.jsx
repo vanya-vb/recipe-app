@@ -1,6 +1,28 @@
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
+import { useRegister } from '../../api/authApi';
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext';
 
 export default function RegisterPage() {
+    const { register } = useRegister();
+    const { userLoginHandler } = useContext(UserContext);
+    const navigate = useNavigate();
+
+    const registerHandler = async (formData) => {
+        const { email, password, repass } = Object.fromEntries(formData);
+
+        if (password !== repass) {
+            console.log('Passwords don\'t match'); // or notification/styling
+
+            return;
+        }
+
+        const authData = await register(email, password);
+
+        userLoginHandler(authData);
+
+        navigate('/');
+    }
 
     return (
         <section className="flex h-screen flex-col justify-center px-6 py-27 lg:px-8 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.85),rgba(0,0,0,0.9)),url('https://images.unsplash.com/photo-1514986888952-8cd320577b68?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-top bg-cover">
@@ -9,7 +31,7 @@ export default function RegisterPage() {
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form action="#" method="POST" className="space-y-6">
+                <form action={registerHandler} className="space-y-6">
                     <div>
                         <label htmlFor="email" className="block text-sm/6 font-medium text-platinum">
                             Email address
@@ -54,7 +76,7 @@ export default function RegisterPage() {
                             <input
                                 id="repass"
                                 name="repass"
-                                type="repass"
+                                type="password"
                                 required
                                 className="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-olivine/70 sm:text-sm/6"
                             />
