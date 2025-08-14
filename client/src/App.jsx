@@ -15,8 +15,8 @@ import Footer from './components/Footer/Footer'
 function App() {
 	const [email, setEmail] = useState('');
 
-	const loginHandler = (email) => {
-		setEmail(email);
+	const loginHandler = (authData) => {
+		setEmail(authData.email);
 	};
 
 	return (
