@@ -13,10 +13,10 @@ import NotFound from './components/NotFound/NotFound'
 import Footer from './components/Footer/Footer'
 
 function App() {
-	const [email, setEmail] = useState('');
+	const [authData, setAuthData] = useState({});
 
-	const loginHandler = (authData) => {
-		setEmail(authData.email);
+	const loginHandler = (resultData) => {
+		setAuthData(resultData);
 	};
 
 	return (
@@ -30,7 +30,7 @@ function App() {
 					<Route path='/recipes/create' element={<RecipeCreate />} />
 					<Route path='/login' element={<LoginPage onLogin={loginHandler} />} />
 					<Route path='/register' element={<RegisterPage />} />
-					<Route path='/recipes/:recipeId/details' element={<RecipeDetails email={email} />} />
+					<Route path='/recipes/:recipeId/details' element={<RecipeDetails email={authData.email} />} />
 					<Route path='/recipes/:recipeId/edit' element={<RecipeEdit />} />
 					<Route path='*' element={<NotFound />} />
 				</Routes>
