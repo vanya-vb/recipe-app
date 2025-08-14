@@ -1,20 +1,27 @@
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link, NavLink } from 'react-router'
 
+import { UserContext } from '../../contexts/UserContext'
 import logoImg from '/src/assets/logo.png'
 
 export default function Header() {
+    const { email } = useContext(UserContext);
 
-    const navigation = [
+    const guestNavigation = [
+        { name: 'Home', href: '/' },
+        { name: 'Recipes', href: '/recipes' },
+        { name: 'Login', href: '/login' },
+        { name: 'Register', href: '/register' },
+    ];
+
+    const userNavigation = [
         { name: 'Home', href: '/' },
         { name: 'Recipes', href: '/recipes' },
         { name: 'Add Recipe', href: '/recipes/create' },
-        { name: 'Login', href: '/login' },
         { name: 'Logout', href: '/logout' },
-        { name: 'Register', href: '/register' },
-    ]
+    ];
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -43,16 +50,34 @@ export default function Header() {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
 
-                    {navigation.map((item) => (
-                        <NavLink
-                            key={item.name}
-                            to={item.href}
-                            end
-                            className={({ isActive }) => `text-sm/6 font-semibold ${isActive ? "text-tangerine border-b" : "text-white"} hover:text-tangerine`}
-                        >
-                            {item.name}
-                        </NavLink>
-                    ))}
+                    {
+                        email ?
+                            (
+                                userNavigation.map((item) => (
+                                    <NavLink
+                                        key={item.name}
+                                        to={item.href}
+                                        end
+                                        className={({ isActive }) => `text-sm/6 font-semibold ${isActive ? "text-tangerine border-b" : "text-white"} hover:text-tangerine`}
+                                    >
+                                        {item.name}
+                                    </NavLink>
+                                ))
+                            )
+                            :
+                            (
+                                guestNavigation.map((item) => (
+                                    <NavLink
+                                        key={item.name}
+                                        to={item.href}
+                                        end
+                                        className={({ isActive }) => `text-sm/6 font-semibold ${isActive ? "text-tangerine border-b" : "text-white"} hover:text-tangerine`}
+                                    >
+                                        {item.name}
+                                    </NavLink>
+                                ))
+                            )
+                    }
 
                 </div>
             </nav>
@@ -81,15 +106,32 @@ export default function Header() {
                         <div className="-my-6 divide-y divide-gray-100/10">
                             <div className="space-y-2 py-6">
 
-                                {navigation.map((item) => (
-                                    <Link
-                                        key={item.name}
-                                        to={item.href}
-                                        className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                                    >
-                                        {item.name}
-                                    </Link>
-                                ))}
+                                {
+                                    email ?
+                                        (
+                                            userNavigation.map((item) => (
+                                                <Link
+                                                    key={item.name}
+                                                    to={item.href}
+                                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                                >
+                                                    {item.name}
+                                                </Link>
+                                            ))
+                                        )
+                                        :
+                                        (
+                                            guestNavigation.map((item) => (
+                                                <Link
+                                                    key={item.name}
+                                                    to={item.href}
+                                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                                >
+                                                    {item.name}
+                                                </Link>
+                                            ))
+                                        )
+                                }
 
                             </div>
                             {/* <div className="py-6">
