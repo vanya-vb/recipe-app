@@ -1,7 +1,9 @@
-import { useNavigate, useParams } from 'react-router'
+import { Navigate, useNavigate, useParams } from 'react-router'
 import { useEditRecipe, useRecipe } from '../../api/recipeApi';
+import useAuth from '../../hooks/useAuth';
 
 export default function RecipeEdit() {
+    const { userId } = useAuth();
     const navigate = useNavigate();
     const { recipeId } = useParams();
     const { recipe } = useRecipe(recipeId);
@@ -14,10 +16,16 @@ export default function RecipeEdit() {
         recipeData.ingredients = recipeData.ingredients.split(',').map(item => item.trim()).filter(item => item !== '');
         recipeData.instructions = recipeData.instructions.split('.').map(item => item.trim()).filter(item => item !== '');
 
+        const isOwner = userId === recipe._ownerId;
+
+        if (!isOwner) {
+            return <Navigate to="/recipes" />
+        }
+
         try {
             await edit(recipeId, recipeData);
             navigate(`/recipes/${recipeId}/details`);
-            
+
         } catch (err) {
             console.error("Error editing recipe:", err);
         }
