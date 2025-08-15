@@ -10,7 +10,7 @@ import commentService from "../../services/commentService";
 
 export default function RecipeDetails() {
     const navigate = useNavigate();
-    const { email } = useAuth();
+    const { email, _id: userId } = useAuth();
     const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
     const { recipe } = useRecipe(recipeId);
@@ -37,6 +37,8 @@ export default function RecipeDetails() {
     const commentCreateHandler = (newComment) => {
         setComments(state => [...state, newComment]);
     };
+
+    const isOwner = userId === recipe._ownerId;
 
     return (
         <article className="max-w-2xl mx-auto my-30 p-8 pb-15 bg-white rounded-lg shadow-md space-y-8 text-gray-800">
@@ -75,20 +77,23 @@ export default function RecipeDetails() {
 
             </div>
 
-            <div className="flex gap-2 justify-end">
-                <Link
-                    to={`/recipes/${recipeId}/edit`}
-                    className="self-end bg-olivine text-white px-2 py-1 rounded-md text-xs font-semibold transition hover:bg-olivine/80 cursor-pointer"
-                >
-                    Edit
-                </Link>
-                <button
-                    onClick={recipeDeleteClickHandler}
-                    className="self-end bg-olivine text-white px-2 py-1 rounded-md text-xs font-semibold transition hover:bg-olivine/80 cursor-pointer"
-                >
-                    Delete
-                </button>
-            </div>
+            {isOwner && (
+                <div className="flex gap-2 justify-end">
+                    <Link
+                        to={`/recipes/${recipeId}/edit`}
+                        className="self-end bg-olivine text-white px-2 py-1 rounded-md text-xs font-semibold transition hover:bg-olivine/80 cursor-pointer"
+                    >
+                        Edit
+                    </Link>
+                    <button
+                        onClick={recipeDeleteClickHandler}
+                        className="self-end bg-olivine text-white px-2 py-1 rounded-md text-xs font-semibold transition hover:bg-olivine/80 cursor-pointer"
+                    >
+                        Delete
+                    </button>
+                </div>
+            )}
+
             <hr className="border-gray-200" />
 
             <CommentsDisplay comments={comments} />
