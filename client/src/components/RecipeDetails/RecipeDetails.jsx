@@ -1,25 +1,17 @@
-import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router"
-
 import { useDeleteRecipe, useRecipe } from "../../api/recipeApi";
 import useAuth from "../../hooks/useAuth";
-
 import CommentsDisplay from "../CommentsDisplay/CommentsDisplay";
 import CommentsCreate from "../CommentsCreate/CommentsCreate";
-import commentService from "../../services/commentService";
+import { useComments } from "../../api/commentsApi";
 
 export default function RecipeDetails() {
     const navigate = useNavigate();
     const { email, _id: userId } = useAuth();
-    const [comments, setComments] = useState([]);
     const { recipeId } = useParams();
     const { recipe } = useRecipe(recipeId);
     const { deleteRecipe } = useDeleteRecipe();
-
-    useEffect(() => {
-        commentService.getAll(recipeId)
-            .then(result => setComments(result));
-    }, [recipeId]);
+    const { comments } = useComments(recipeId);
 
     // delete handler
     const recipeDeleteClickHandler = async () => {
