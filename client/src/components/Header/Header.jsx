@@ -1,13 +1,13 @@
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { useContext, useState } from 'react'
-import { Link, NavLink } from 'react-router'
+import useAuth from '../../hooks/useAuth'
 
-import { UserContext } from '../../contexts/UserContext'
 import logoImg from '/src/assets/logo.png'
 
 export default function Header() {
-    const { email } = useContext(UserContext);
+    const { email, isAuthenticated } = useAuth();
 
     const guestNavigation = [
         { name: 'Home', href: '/' },
@@ -51,7 +51,7 @@ export default function Header() {
                 <div className="hidden lg:flex lg:gap-x-12">
 
                     {
-                        email ?
+                        isAuthenticated ?
                             (
                                 userNavigation.map((item) => (
                                     <NavLink

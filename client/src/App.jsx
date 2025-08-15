@@ -14,6 +14,7 @@ import NotFound from './components/NotFound/NotFound'
 
 import UserProvider from './providers/UserProvider'
 import AuthGuard from './components/guards/AuthGuard'
+import GuestGuard from './components/guards/GuestGuard'
 
 function App() {
 
@@ -27,14 +28,18 @@ function App() {
 						<Route path='/' element={<HeroSection />} />
 						<Route path='/recipes' element={<RecipesPage />} />
 						<Route path='/recipes/:recipeId/details' element={<RecipeDetails />} />
+						<Route path='*' element={<NotFound />} />
+
 						<Route element={<AuthGuard />} >
 							<Route path='/recipes/create' element={<RecipeCreate />} />
 							<Route path='/recipes/:recipeId/edit' element={<RecipeEdit />} />
 							<Route path='/logout' element={<Logout />} />
 						</Route>
-						<Route path='/login' element={<LoginPage />} />
-						<Route path='/register' element={<RegisterPage />} />
-						<Route path='*' element={<NotFound />} />
+
+						<Route element={<GuestGuard />} >
+							<Route path='/login' element={<LoginPage />} />
+							<Route path='/register' element={<RegisterPage />} />
+						</Route>
 					</Routes>
 				</main>
 

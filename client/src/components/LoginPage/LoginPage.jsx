@@ -15,7 +15,7 @@ export default function LoginPage() {
 
         userLoginHandler(authData);
 
-        navigate('/recipes');
+        navigate(-1);
     };
 
     const [values, loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' });
