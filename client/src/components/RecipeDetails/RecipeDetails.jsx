@@ -28,7 +28,13 @@ export default function RecipeDetails() {
     };
 
     const commentCreateHandler = async (comment) => {
-        const newComment = await create(recipeId, comment);
+        let newComment = await create(recipeId, comment);
+        newComment = {
+            ...newComment,
+            author: {
+                email,
+            },
+        }
 
         setComments(state => [...state, newComment]);
     };

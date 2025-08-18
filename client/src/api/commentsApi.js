@@ -9,7 +9,8 @@ export const useComments = (recipeId) => {
 
     useEffect(() => {
         const searchParams = new URLSearchParams({
-            where: `recipeId="${recipeId}"`
+            where: `recipeId="${recipeId}"`,
+            load: `author=_ownerId:users`,
         });
 
         request.get(`${baseUrl}?${searchParams.toString()}`)
