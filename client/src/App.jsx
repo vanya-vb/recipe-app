@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router'
+import { ToastContainer } from 'react-toastify';
 
 import Header from './components/Header/Header'
 import HeroSection from './components/HeroSection/HeroSection'
@@ -21,6 +22,7 @@ function App() {
 	return (
 		<>
 			<UserProvider>
+				<ToastContainer autoClose={3000} hideProgressBar newestOnTop/>
 				<Header />
 
 				<main>

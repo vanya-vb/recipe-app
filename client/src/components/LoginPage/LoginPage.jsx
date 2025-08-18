@@ -2,6 +2,7 @@ import { useActionState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router'
 import { useLogin } from '../../api/authApi';
 import { UserContext } from '../../contexts/UserContext';
+import { toast } from 'react-toastify';
 
 export default function LoginPage() {
     const navigate = useNavigate();
@@ -15,9 +16,12 @@ export default function LoginPage() {
             const authData = await login(values.email, values.password);
             userLoginHandler(authData);
 
+            toast.success('Successful login');
+
             navigate(-1);
         } catch (err) {
             console.log(err);
+            toast.error(err.message);
         }
     };
 
