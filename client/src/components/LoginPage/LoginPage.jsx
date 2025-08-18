@@ -8,17 +8,20 @@ export default function LoginPage() {
     const { userLoginHandler } = useContext(UserContext);
     const { login } = useLogin();
 
-    const loginHandler = async (prevState, formData) => {
+    const loginHandler = async (_, formData) => {
         const values = Object.fromEntries(formData);
 
-        const authData = await login(values.email, values.password);
+        try {
+            const authData = await login(values.email, values.password);
+            userLoginHandler(authData);
 
-        userLoginHandler(authData);
-
-        navigate(-1);
+            navigate(-1);
+        } catch (err) {
+            console.log(err);
+        }
     };
 
-    const [values, loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' });
+    const [_, loginAction, isPending] = useActionState(loginHandler, { email: '', password: '' });
 
     // console.log(values);
 
