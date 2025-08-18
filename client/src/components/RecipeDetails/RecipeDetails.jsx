@@ -3,7 +3,7 @@ import { useDeleteRecipe, useRecipe } from "../../api/recipeApi";
 import useAuth from "../../hooks/useAuth";
 import CommentsDisplay from "../CommentsDisplay/CommentsDisplay";
 import CommentsCreate from "../CommentsCreate/CommentsCreate";
-import { useComments } from "../../api/commentsApi";
+import { useComments, useCreateComment } from "../../api/commentsApi";
 
 export default function RecipeDetails() {
     const navigate = useNavigate();
@@ -12,6 +12,7 @@ export default function RecipeDetails() {
     const { recipe } = useRecipe(recipeId);
     const { deleteRecipe } = useDeleteRecipe();
     const { comments } = useComments(recipeId);
+    const { create } = useCreateComment();
 
     // delete handler
     const recipeDeleteClickHandler = async () => {
@@ -26,8 +27,8 @@ export default function RecipeDetails() {
         navigate('/recipes');
     };
 
-    const commentCreateHandler = (newComment) => {
-        setComments(state => [...state, newComment]);
+    const commentCreateHandler = async (comment) => {
+        await create(recipeId, comment);
     };
 
     const isOwner = userId === recipe._ownerId;

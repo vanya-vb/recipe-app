@@ -18,3 +18,20 @@ export const useComments = (recipeId) => {
 
     return { comments }
 };
+
+export const useCreateComment = () => {
+    const { request } = useAuth();
+
+    const create = (recipeId, comment) => {
+        const commentData = {
+            recipeId,
+            comment,
+        };
+
+        return request.post(baseUrl, commentData);
+    }
+    
+    return {
+        create,
+    }
+}

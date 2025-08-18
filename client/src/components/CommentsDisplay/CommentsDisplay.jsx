@@ -9,7 +9,7 @@ export default function CommentsDisplay({ comments }) {
                     comments.length > 0 ?
                         comments.map(comment => (
                             <li key={comment._id} className="bg-white p-4 rounded-lg border border-gray-200">
-                                <p className="text-sm text-gray-600"><span className="font-semibold">{comment.email}</span>: {comment.comment}</p>
+                                <p className="text-sm text-gray-600"><span className="font-semibold">{comment._ownerId}</span>: {comment.comment}</p>
                             </li>
                         ))
                         :
