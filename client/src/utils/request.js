@@ -14,23 +14,32 @@ const request = async (method, url, data, options = {}) => {
         };
     }
 
-    const response = await fetch(url, options);
+    try {
+        const response = await fetch(url, options);
+        const responseContentType = response.headers.get('Content-Type');
 
-    const responseContentType = response.headers.get('Content-Type');
+        if (!responseContentType) {
+            return;
+        }
 
-    if (!responseContentType) {
-        return;
+        if (!response.ok) {
+            const err = await response.json();
+
+            throw err;
+        }
+
+        if (response.status === 204) {
+            return response;
+        } else {
+            const result = await response.json();
+
+            return result;
+        }
+
+    } catch (err) {
+        console.log(err)
+        throw err;
     }
-
-    if (!response.ok) {
-        const result = await response.json();
-
-        throw result;
-    }
-
-    const result = await response.json();
-
-    return result;
 };
 
 export default {
