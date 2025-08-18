@@ -16,7 +16,10 @@ export const useComments = (recipeId) => {
             .then(setComments);
     }, [recipeId]); // to fix
 
-    return { comments }
+    return {
+        comments,
+        setComments,
+    }
 };
 
 export const useCreateComment = () => {
@@ -30,7 +33,7 @@ export const useCreateComment = () => {
 
         return request.post(baseUrl, commentData);
     }
-    
+
     return {
         create,
     }

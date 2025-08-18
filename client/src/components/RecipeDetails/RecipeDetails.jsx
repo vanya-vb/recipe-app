@@ -11,7 +11,7 @@ export default function RecipeDetails() {
     const { recipeId } = useParams();
     const { recipe } = useRecipe(recipeId);
     const { deleteRecipe } = useDeleteRecipe();
-    const { comments } = useComments(recipeId);
+    const { comments, setComments } = useComments(recipeId);
     const { create } = useCreateComment();
 
     // delete handler
@@ -28,7 +28,9 @@ export default function RecipeDetails() {
     };
 
     const commentCreateHandler = async (comment) => {
-        await create(recipeId, comment);
+        const newComment = await create(recipeId, comment);
+
+        setComments(state => [...state, newComment]);
     };
 
     const isOwner = userId === recipe._ownerId;
