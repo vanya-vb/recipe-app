@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router'
 import { useRegister } from '../../api/authApi';
 import { useUserContext } from '../../contexts/UserContext';
+import { toast } from 'react-toastify';
 
 export default function RegisterPage() {
     const navigate = useNavigate();
@@ -11,7 +12,7 @@ export default function RegisterPage() {
         const { email, password, repass } = Object.fromEntries(formData);
 
         if (password !== repass) {
-            console.log('Passwords don\'t match'); // or notification/styling
+            toast.error('Passwords don\'t match'); // or notification/styling
 
             return;
         }
@@ -19,6 +20,7 @@ export default function RegisterPage() {
         const authData = await register(email, password);
 
         userLoginHandler(authData);
+        toast.success('Successful login');
 
         navigate('/');
     }
