@@ -15,7 +15,7 @@ export const useComments = (recipeId) => {
 
         request.get(`${baseUrl}?${searchParams.toString()}`)
             .then(setComments);
-    }, [recipeId]); // to fix
+    }, [recipeId, request]);
 
     return {
         comments,
