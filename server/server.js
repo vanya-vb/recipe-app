@@ -1328,17 +1328,17 @@
     var protectedData = {
         users: {
             "35c62d76-8152-4626-8712-eeb96381bea8": {
-                email: "peter@abv.bg",
-                username: "Peter",
+                email: "vanya@gmail.com",
+                username: "Vanya",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
-                email: "george@abv.bg",
+                email: "george@gmail.com",
                 username: "George",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
-                email: "admin@abv.bg",
+                email: "admin@gmail.com",
                 username: "Admin",
                 hashedPassword: "fac7060c3e17e6f151f247eacb2cd5ae80b8c36aedb8764e18a41bbdc16aa302"
             }
@@ -1547,15 +1547,50 @@
                 "_id": "23afe91a-1e9a-4395-a415-de54ca4d9080"
             },
         ],
-        comments: {
-            "0a272c58-b7ea-4e09-a000-7ec988248f66": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                content: "Great recipe!",
-                recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-                _createdOn: 1614260681375,
-                _id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
-            }
-        },
+        comments: [
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "recipeId": "0",
+                "comment": "Great recipe!",
+                "_createdOn": 1755582869112,
+                "_id": "625674c2-70d5-443a-911f-9454b9d38b81"
+            },
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "recipeId": "6",
+                "comment": "My favourite breakfast!",
+                "_createdOn": 1755583595983,
+                "_id": "bb7ebd10-72ef-496c-ab70-0369c22996f5"
+            },
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "recipeId": "7",
+                "comment": "So easy to follow, and it turned out just like the picture. Thanks for sharing!",
+                "_createdOn": 1755583767448,
+                "_id": "58e2bab7-cd39-4cbc-b0ed-490d2999751f"
+            },
+            {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "recipeId": "2",
+                "comment": "Kids asked if we could have this every day. I said no, but secretly I agree with them.",
+                "_createdOn": 1755583837437,
+                "_id": "4e2713f3-1767-4971-9fe8-41576c2f3e22"
+            },
+            {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "recipeId": "3",
+                "comment": "Cooked this for date night… success!",
+                "_createdOn": 1755583941598,
+                "_id": "b865a391-faa4-449f-aca0-997803992495"
+            },
+            {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "recipeId": "3",
+                "comment": "Accidentally doubled the garlic, but honestly… not sorry.",
+                "_createdOn": 1755583991047,
+                "_id": "e764c992-f740-40cc-a6ab-880e88a58b43"
+            },
+        ],
     };
     var rules$1 = {
         users: {
