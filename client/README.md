@@ -1,12 +1,28 @@
-# React + Vite
+# Recipe App
+I built this web application to help users plan their daily meals and discover new recipes. Users can browse predefined meals, create and save their own recipes, and interact with others through comments. The app provides both **public** and **private** sections with authentication and role-based permissions.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Features
+### 1) **Public Part** (for guests)
+ - guests can browse the catalog of predefined meals
+ - guests can view detailed recipe information
+ - guests cannot access private pages
 
-Currently, two official plugins are available:
+### 2) **Private Part** (for users)
+ - users can **create**, **edit** and **delete** only their own records
+ - users can view and add comments on recipes
+ - users can access route-guarded private pages
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+- Vite - fast build tool
+- React 19 - front-end libraray
+- React Router 7 - client-side routing
+- TailwindCSS - styling
+- React Toastify - notifications
+- React Icons - icons
+- SoftUni Practice Server – back-end with REST API
 
-## Expanding the ESLint configuration
+## 📂 Folder Structure
+![alt text](image.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deployment
+
