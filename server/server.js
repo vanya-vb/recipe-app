@@ -1389,12 +1389,12 @@
                     "Cooked rice for serving"
                 ],
                 "instructions": [
-                    "In a wok, heat sesame oil over medium-high heat.",
-                    "Add minced ginger and garlic, sauté until fragrant.",
-                    "Add cubed tofu and stir-fry until golden brown.",
-                    "Add broccoli, carrots, and bell peppers. Cook until vegetables are tender-crisp.",
-                    "Pour soy sauce over the stir-fry and toss to combine.",
-                    "Serve over cooked rice."
+                    "In a wok, heat sesame oil over medium-high heat",
+                    "Add minced ginger and garlic, sauté until fragrant",
+                    "Add cubed tofu and stir-fry until golden brown",
+                    "Add broccoli, carrots, and bell peppers. Cook until vegetables are tender-crisp",
+                    "Pour soy sauce over the stir-fry and toss to combine",
+                    "Serve over cooked rice"
                 ],
                 "_createdOn": 1755193542770,
                 "_id": "942b6271-a99e-49e1-9772-7397043013b3"
@@ -1416,14 +1416,14 @@
                     "Chocolate chips"
                 ],
                 "instructions": [
-                    "Preheat the oven to 350°F (175°C).",
-                    "In a bowl, cream together softened butter, brown sugar, and white sugar.",
-                    "Beat in eggs one at a time, then stir in vanilla extract.",
-                    "Combine flour, baking soda, and salt. Gradually add to the wet ingredients.",
+                    "Preheat the oven to 350°F (175°C)",
+                    "In a bowl, cream together softened butter, brown sugar, and white sugar",
+                    "Beat in eggs one at a time, then stir in vanilla extract",
+                    "Combine flour, baking soda, and salt. Gradually add to the wet ingredients",
                     "Fold in chocolate chips.",
-                    "Drop rounded tablespoons of dough onto ungreased baking sheets.",
-                    "Bake for 10-12 minutes or until edges are golden brown.",
-                    "Allow cookies to cool on the baking sheet for a few minutes before transferring to a wire rack."
+                    "Drop rounded tablespoons of dough onto ungreased baking sheets",
+                    "Bake for 10-12 minutes or until edges are golden brown",
+                    "Allow cookies to cool on the baking sheet for a few minutes before transferring to a wire rack"
                 ],
                 "_createdOn": 1755193629848,
                 "_id": "659d1ee2-58bd-49b5-9cb6-1c1a3a81bbd5"
@@ -1444,13 +1444,13 @@
                     "Fresh parsley for garnish"
                 ],
                 "instructions": [
-                    "Cook fettuccine pasta according to package instructions.",
-                    "In a pan, sauté sliced chicken in butter until fully cooked.",
-                    "Add minced garlic and cook until fragrant.",
-                    "Pour in heavy cream and grated Parmesan cheese. Stir until the cheese is melted.",
-                    "Season with salt and pepper to taste.",
-                    "Combine the Alfredo sauce with cooked pasta.",
-                    "Garnish with fresh parsley before serving."
+                    "Cook fettuccine pasta according to package instructions",
+                    "In a pan, sauté sliced chicken in butter until fully cooked",
+                    "Add minced garlic and cook until fragrant",
+                    "Pour in heavy cream and grated Parmesan cheese. Stir until the cheese is melted",
+                    "Season with salt and pepper to taste",
+                    "Combine the Alfredo sauce with cooked pasta",
+                    "Garnish with fresh parsley before serving"
                 ],
                 "_createdOn": 1755193683862,
                 "_id": "bddd9ba4-f55b-42c1-a523-17b0663032f2"
@@ -1471,11 +1471,11 @@
                     "Cooked rice for serving"
                 ],
                 "instructions": [
-                    "Season chicken thighs with salt and pepper.",
-                    "Grill or bake chicken until fully cooked.",
-                    "In a bowl, combine diced mango, chopped red onion, cilantro, minced jalapeño, and lime juice.",
-                    "Dice the cooked chicken and mix it with the mango salsa.",
-                    "Serve over cooked rice."
+                    "Season chicken thighs with salt and pepper",
+                    "Grill or bake chicken until fully cooked",
+                    "In a bowl, combine diced mango, chopped red onion, cilantro, minced jalapeño, and lime juice",
+                    "Dice the cooked chicken and mix it with the mango salsa",
+                    "Serve over cooked rice"
                 ],
                 "_createdOn": 1755193742174,
                 "_id": "50081726-ad20-4bf2-8fc5-276d5df7eee6"
@@ -1494,11 +1494,11 @@
                     "Salt and pepper to taste"
                 ],
                 "instructions": [
-                    "Arrange alternating slices of tomatoes and fresh mozzarella on a serving platter.",
-                    "Tuck fresh basil leaves between the slices.",
-                    "Drizzle with balsamic glaze and extra virgin olive oil.",
-                    "Season with salt and pepper to taste.",
-                    "Serve immediately as a refreshing salad."
+                    "Arrange alternating slices of tomatoes and fresh mozzarella on a serving platter",
+                    "Tuck fresh basil leaves between the slices",
+                    "Drizzle with balsamic glaze and extra virgin olive oil",
+                    "Season with salt and pepper to taste",
+                    "Serve immediately as a refreshing salad"
                 ],
                 "_createdOn": 1755193788659,
                 "_id": "5b32f14e-dd3b-4da4-820f-fe1edea6ba5c"
@@ -1517,10 +1517,10 @@
                     "Chia seeds (optional)"
                 ],
                 "instructions": [
-                    "In a blender, combine blueberries, banana, Greek yogurt, almond milk, and honey.",
-                    "Blend until smooth and creamy.",
-                    "Add chia seeds for extra nutrition and blend briefly.",
-                    "Pour into a glass and enjoy this nutritious Blueberry Banana Smoothie."
+                    "In a blender, combine blueberries, banana, Greek yogurt, almond milk, and honey",
+                    "Blend until smooth and creamy",
+                    "Add chia seeds for extra nutrition and blend briefly",
+                    "Pour into a glass and enjoy this nutritious Blueberry Banana Smoothie"
                 ],
                 "_createdOn": 1755193834029,
                 "_id": "919c552f-d61a-4478-89db-218ce3c1f015"
@@ -1538,10 +1538,9 @@
                     "Lime wedges"
                 ],
                 "instructions": [
-                    "Grill or roast corn on the cob until kernels are charred.",
-                    "Brush each cob with mayonnaise, then sprinkle with crumbled Cotija cheese and chili powder.",
-                    "Serve with lime wedges for squeezing over the top.",
-                    "Enjoy this delicious and flavorful Mexican Street Corn."
+                    "Grill or roast corn on the cob until kernels are charred",
+                    "Brush each cob with mayonnaise, then sprinkle with crumbled Cotija cheese and chili powder",
+                    "Serve with lime wedges for squeezing over the top",
                 ],
                 "_createdOn": 1755193892567,
                 "_id": "23afe91a-1e9a-4395-a415-de54ca4d9080"
