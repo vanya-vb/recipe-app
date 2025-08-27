@@ -7,10 +7,10 @@ export default function RecipeCreate() {
 
     const submitAction = async (formData) => {
         const recipeData = Object.fromEntries(formData);
-        // console.log(recipeData);
 
         recipeData.ingredients = recipeData.ingredients.split(',').map(item => item.trim()).filter(item => item !== '');
         recipeData.instructions = recipeData.instructions.split('.').map(item => item.trim()).filter(item => item !== '');
+        console.log(recipeData.instructions)
 
         try {
             await createRecipe(recipeData);

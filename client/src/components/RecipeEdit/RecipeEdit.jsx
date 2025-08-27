@@ -90,7 +90,7 @@ export default function RecipeEdit() {
                             rows="2"
                             placeholder="Add the ingrediets, separated by comma"
                             className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine focus:border-tangerine"
-                            defaultValue={recipe.ingredients}
+                            defaultValue={recipe.ingredients?.join(', ')}
                         ></textarea>
                     </div>
 
@@ -101,7 +101,7 @@ export default function RecipeEdit() {
                             name="instructions"
                             rows="4"
                             className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
-                            defaultValue={recipe.instructions}
+                            defaultValue={recipe.instructions?.join('. ')}
                         ></textarea>
                     </div>
                 </div>
