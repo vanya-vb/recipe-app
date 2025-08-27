@@ -4,10 +4,11 @@ import useAuth from "../../hooks/useAuth";
 import CommentsDisplay from "../CommentsDisplay/CommentsDisplay";
 import CommentsCreate from "../CommentsCreate/CommentsCreate";
 import { useComments, useCreateComment } from "../../api/commentsApi";
+import { toast } from 'react-toastify';
 
 export default function RecipeDetails() {
     const navigate = useNavigate();
-    const { email, _id: userId } = useAuth();
+    const { email, userId } = useAuth();
     const { recipeId } = useParams();
     const { recipe } = useRecipe(recipeId);
     const { deleteRecipe } = useDeleteRecipe();
@@ -28,15 +29,20 @@ export default function RecipeDetails() {
     };
 
     const commentCreateHandler = async (comment) => {
-        let newComment = await create(recipeId, comment);
-        newComment = {
-            ...newComment,
-            author: {
-                email,
-            },
-        }
+        try {
+            let newComment = await create(recipeId, comment);
 
-        setComments(state => [...state, newComment]);
+            newComment = {
+                ...newComment,
+                author: {
+                    email,
+                },
+            }
+    
+            setComments(state => [...state, newComment]);
+        } catch(err) {
+            toast.error(err.message);
+        }
     };
 
     const isOwner = userId === recipe._ownerId;
