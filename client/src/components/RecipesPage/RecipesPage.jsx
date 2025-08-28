@@ -21,7 +21,6 @@ export default function RecipesPage() {
 
     useEffect(() => {
         const filter = Object.fromEntries(searchParams);
-        console.log(filter.meal);
 
         if (filter.meal) {
             setDisplayRecipes(recipes.filter(recipe => filter.meal === recipe.category));

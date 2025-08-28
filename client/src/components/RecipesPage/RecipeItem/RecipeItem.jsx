@@ -4,7 +4,7 @@ export default function RecipeItem({ _id, title, category, imageUrl, ingredients
     ingredients = ingredients.join(', ');
 
     return (
-        <article className="grid gap-4 md:grid-cols-[200px_1fr] capitalize">
+        <article className="grid gap-4 sm:grid-cols-[200px_1fr] capitalize">
             <div className="relative">
                 <img
                     src={imageUrl}
