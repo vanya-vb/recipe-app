@@ -1378,13 +1378,13 @@
                 "category": "lunch",
                 "imageUrl": "https://cdn.dummyjson.com/recipe-images/2.webp",
                 "ingredients": [
-                    "Tofu, cubed",
+                    "Tofu - cubed",
                     "Broccoli florets",
-                    "Carrots, sliced",
-                    "Bell peppers, sliced",
+                    "Carrots - sliced",
+                    "Bell peppers - sliced",
                     "Soy sauce",
-                    "Ginger, minced",
-                    "Garlic, minced",
+                    "Ginger - minced",
+                    "Garlic - minced",
                     "Sesame oil",
                     "Cooked rice for serving"
                 ],
@@ -1406,7 +1406,7 @@
                 "imageUrl": "https://cdn.dummyjson.com/recipe-images/3.webp",
                 "ingredients": [
                     "All-purpose flour",
-                    "Butter, softened",
+                    "Butter - softened",
                     "Brown sugar",
                     "White sugar",
                     "Eggs",
@@ -1435,10 +1435,10 @@
                 "imageUrl": "https://cdn.dummyjson.com/recipe-images/4.webp",
                 "ingredients": [
                     "Fettuccine pasta",
-                    "Chicken breast, sliced",
+                    "Chicken breast - sliced",
                     "Heavy cream",
-                    "Parmesan cheese, grated",
-                    "Garlic, minced",
+                    "Parmesan cheese - grated",
+                    "Garlic - minced",
                     "Butter",
                     "Salt and pepper to taste",
                     "Fresh parsley for garnish"
@@ -1462,11 +1462,11 @@
                 "imageUrl": "https://cdn.dummyjson.com/recipe-images/5.webp",
                 "ingredients": [
                     "Chicken thighs",
-                    "Mango, diced",
-                    "Red onion, finely chopped",
-                    "Cilantro, chopped",
+                    "Mango - diced",
+                    "Red onion - finely chopped",
+                    "Cilantro - chopped",
                     "Lime juice",
-                    "Jalapeño, minced",
+                    "Jalapeño - minced",
                     "Salt and pepper to taste",
                     "Cooked rice for serving"
                 ],
@@ -1486,8 +1486,8 @@
                 "category": "lunch",
                 "imageUrl": "https://cdn.dummyjson.com/recipe-images/9.webp",
                 "ingredients": [
-                    "Tomatoes, sliced",
-                    "Fresh mozzarella cheese, sliced",
+                    "Tomatoes - sliced",
+                    "Fresh mozzarella cheese - sliced",
                     "Fresh basil leaves",
                     "Balsamic glaze",
                     "Extra virgin olive oil",
