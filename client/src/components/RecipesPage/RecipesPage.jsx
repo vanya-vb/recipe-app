@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router";
 import { useRecipes } from "../../api/recipeApi";
 
 import RecipeItem from "./RecipeItem/RecipeItem";
+import Spinner from "../Spinner/Spinner";
 
 export default function RecipesPage() {
     const { recipes } = useRecipes();
@@ -57,7 +58,7 @@ export default function RecipesPage() {
                         displayRecipes.length > 0 ?
                             displayRecipes.map(recipe => <RecipeItem key={recipe._id} {...recipe} />)
                             :
-                            <h3 className="text-3xl text-white font-bold tracking-widest ">No recipes yet.</h3>
+                            <Spinner/>
                     }
 
                 </div>
