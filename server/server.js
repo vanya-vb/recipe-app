@@ -1419,8 +1419,8 @@
                     "Preheat the oven to 350°F (175°C)",
                     "In a bowl, cream together softened butter, brown sugar, and white sugar",
                     "Beat in eggs one at a time, then stir in vanilla extract",
-                    "Combine flour, baking soda, and salt. Gradually add to the wet ingredients",
-                    "Fold in chocolate chips.",
+                    "Combine flour, baking soda, and salt and gradually add to the wet ingredients",
+                    "Fold in chocolate chips",
                     "Drop rounded tablespoons of dough onto ungreased baking sheets",
                     "Bake for 10-12 minutes or until edges are golden brown",
                     "Allow cookies to cool on the baking sheet for a few minutes before transferring to a wire rack"
