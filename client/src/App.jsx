@@ -19,6 +19,8 @@ import GuestGuard from './components/guards/GuestGuard'
 
 function App() {
 
+	console.log(import.meta.env.VITE_APP_SERVER_URL)
+
 	return (
 		<>
 			<UserProvider>
