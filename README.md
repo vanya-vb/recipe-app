@@ -22,6 +22,7 @@ I built this web application to help users plan their daily meals and discover n
 - SoftUni Practice Server – back-end with REST API
 
 ## Deployment
-- Server: GCP, Cloud Run, Docker, Artifact Registry
-- Client: Firebase
+- Server: GCP Cloud Run, Docker, Artifact Registry
+- Client: Firebase Hosting
+- CI/CD: Github Actions
 
