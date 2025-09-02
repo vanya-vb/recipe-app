@@ -81,9 +81,10 @@ export default function Header() {
 
                 </div>
             </nav>
+
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                 <div className="fixed inset-0 z-50" />
-                <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-night/95 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <Link to="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Your Company</span>
@@ -91,12 +92,13 @@ export default function Header() {
                                 alt="logo"
                                 src={logoImg}
                                 className="h-8 w-auto"
+                                onClick={() => setMobileMenuOpen(false)}
                             />
                         </Link>
                         <button
                             type="button"
                             onClick={() => setMobileMenuOpen(false)}
-                            className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                            className="-m-2.5 rounded-md p-2.5 text-olivine"
                         >
                             <span className="sr-only">Close menu</span>
                             <XMarkIcon aria-hidden="true" className="size-6" />
@@ -113,7 +115,8 @@ export default function Header() {
                                                 <Link
                                                     key={item.name}
                                                     to={item.href}
-                                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-platinum hover:bg-olivine/15"
+                                                    onClick={() => setMobileMenuOpen(false)}
                                                 >
                                                     {item.name}
                                                 </Link>
@@ -125,7 +128,8 @@ export default function Header() {
                                                 <Link
                                                     key={item.name}
                                                     to={item.href}
-                                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-platinum hover:bg-olivine/15"
+                                                    onClick={() => setMobileMenuOpen(false)}
                                                 >
                                                     {item.name}
                                                 </Link>
@@ -134,14 +138,6 @@ export default function Header() {
                                 }
 
                             </div>
-                            {/* <div className="py-6">
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                                >
-                                    Log in
-                                </a>
-                            </div> */}
                         </div>
                     </div>
                 </DialogPanel>
