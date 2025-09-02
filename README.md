@@ -21,8 +21,7 @@ I built this web application to help users plan their daily meals and discover n
 - React Icons - icons
 - SoftUni Practice Server – back-end with REST API
 
-## 📂 Folder Structure
-![alt text](image.png)
-
 ## Deployment
+- Server: GCP, Cloud Run, Docker, Artifact Registry
+- Client: Firebase
 
