@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router'
 import { ToastContainer } from 'react-toastify';
+import { usePageTracking } from './hooks/usePageTracking';
 
 import Header from './components/Header/Header'
 import HeroSection from './components/HeroSection/HeroSection'
@@ -18,13 +19,14 @@ import AuthGuard from './components/guards/AuthGuard'
 import GuestGuard from './components/guards/GuestGuard'
 
 function App() {
-
-	console.log(import.meta.env.VITE_APP_SERVER_URL)
+	usePageTracking();
+	
+	// console.log(import.meta.env.VITE_APP_SERVER_URL);
 
 	return (
 		<>
 			<UserProvider>
-				<ToastContainer autoClose={3000} hideProgressBar newestOnTop/>
+				<ToastContainer autoClose={3000} hideProgressBar newestOnTop />
 				<Header />
 
 				<main>
