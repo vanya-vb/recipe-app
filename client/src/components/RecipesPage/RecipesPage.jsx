@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router";
+import { Link, NavLink, useLocation, useSearchParams } from "react-router";
 import { useRecipes } from "../../api/recipeApi";
 
 import RecipeItem from "./RecipeItem/RecipeItem";
@@ -9,6 +9,7 @@ export default function RecipesPage() {
     const { recipes } = useRecipes();
     const [displayRecipes, setDisplayRecipes] = useState([]);
     const [searchParams] = useSearchParams();
+    const location = useLocation();
     // console.log(Object.fromEntries(searchParams));
 
     const sortOptions = [
@@ -40,13 +41,17 @@ export default function RecipesPage() {
                 <div className="flex justify-center flex-wrap gap-3 mb-10">
 
                     {sortOptions.map(option => (
-                        <Link
+                        <NavLink
                             key={option.name}
                             to={option.href}
-                            className={`capitalize border border-olivine text-olivine px-4 py-2 rounded-md transition-all hover:bg-olivine hover:text-night text-sm tracking-wide`}
+                            className={() => `uppercase border border-olivine px-4 py-2 rounded-md transition-all text-xs tracking-wide 
+                                ${location.pathname + location.search === option.href
+                                    ? "bg-olivine text-night"
+                                    : "text-olivine hover:bg-olivine hover:text-night"}`
+                            }
                         >
                             {option.name}
-                        </Link>)
+                        </NavLink>)
                     )}
 
                 </div>
@@ -57,7 +62,7 @@ export default function RecipesPage() {
                         displayRecipes.length > 0 ?
                             displayRecipes.map(recipe => <RecipeItem key={recipe._id} {...recipe} />)
                             :
-                            <Spinner/>
+                            <Spinner />
                     }
 
                 </div>
