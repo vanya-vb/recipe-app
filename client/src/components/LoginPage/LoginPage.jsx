@@ -16,12 +16,11 @@ export default function LoginPage() {
             const authData = await login(values.email, values.password);
             userLoginHandler(authData);
 
-            toast.success('Successful login');
-
+            toast.success('Successfully logged in');
             navigate(-1);
         } catch (err) {
             console.log(err);
-            toast.error(err.message);
+            toast.error('Invalid email or password');
         }
     };
 

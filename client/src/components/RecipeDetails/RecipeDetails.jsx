@@ -26,7 +26,7 @@ export default function RecipeDetails() {
         }
 
         await deleteRecipe(recipeId);
-        toast.success('The recipe is deleted successfully');
+        toast.success('The recipe has been deleted successfully');
         navigate('/recipes');
     };
 

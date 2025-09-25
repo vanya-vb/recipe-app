@@ -14,7 +14,7 @@ export default function RecipeCreate() {
 
         try {
             await createRecipe(recipeData);
-            toast.success('The recipe is created successfully')
+            toast.success('The recipe has been created successfully')
             navigate('/recipes');
         } catch (err) {
             console.error("Error creating recipe:", err);

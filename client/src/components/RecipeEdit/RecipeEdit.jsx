@@ -25,7 +25,7 @@ export default function RecipeEdit() {
 
         try {
             await edit(recipeId, recipeData);
-            toast.success('The recipe is edited successfully');
+            toast.success('The recipe has been edited successfully');
             navigate(`/recipes/${recipeId}/details`);
 
         } catch (err) {

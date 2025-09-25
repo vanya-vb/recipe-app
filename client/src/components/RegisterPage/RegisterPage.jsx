@@ -12,15 +12,14 @@ export default function RegisterPage() {
         const { email, password, repass } = Object.fromEntries(formData);
 
         if (password !== repass) {
-            toast.error('Passwords don\'t match'); // or notification/styling
-
+            toast.error('Passwords don\'t match'); 
             return;
         }
 
         const authData = await register(email, password);
 
         userLoginHandler(authData);
-        toast.success('Successful login');
+        toast.success('Successfully registered');
 
         navigate('/');
     }
