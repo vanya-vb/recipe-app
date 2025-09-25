@@ -58,7 +58,7 @@ export default function Header() {
                                         key={item.name}
                                         to={item.href}
                                         end
-                                        className={({ isActive }) => `text-sm/6 font-semibold ${isActive ? "text-tangerine border-b" : "text-white"} hover:text-tangerine`}
+                                        className={({ isActive }) => `text-sm/6 font-semibold ${isActive ? "text-tangerine border-b" : "text-white"} hover:text-tangerine transition`}
                                     >
                                         {item.name}
                                     </NavLink>
@@ -71,7 +71,7 @@ export default function Header() {
                                         key={item.name}
                                         to={item.href}
                                         end
-                                        className={({ isActive }) => `text-sm/6 font-semibold ${isActive ? "text-tangerine border-b" : "text-white"} hover:text-tangerine`}
+                                        className={({ isActive }) => `text-sm/6 font-semibold ${isActive ? "text-tangerine border-b" : "text-white"} hover:text-tangerine transition`}
                                     >
                                         {item.name}
                                     </NavLink>

@@ -1,5 +1,6 @@
 import { Navigate, useNavigate, useParams } from 'react-router'
 import { useEditRecipe, useRecipe } from '../../api/recipeApi';
+import { toast } from 'react-toastify';
 import useAuth from '../../hooks/useAuth';
 
 export default function RecipeEdit() {
@@ -24,6 +25,7 @@ export default function RecipeEdit() {
 
         try {
             await edit(recipeId, recipeData);
+            toast.success('The recipe is edited successfully');
             navigate(`/recipes/${recipeId}/details`);
 
         } catch (err) {
@@ -35,7 +37,7 @@ export default function RecipeEdit() {
         <section className="w-full min-h-screen bg-gray-100 flex items-center justify-center py-30 px-4 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.60),rgba(0,0,0,0.30)),url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center">
             <form
                 action={formAction}
-                className="w-full max-w-xl bg-white shadow-lg rounded-lg p-8"
+                className="w-full max-w-xl bg-white/90 shadow-lg rounded-lg p-8"
             >
                 <h1 className="text-2xl font-bold mb-6 text-center text-gray-800">Edit Recipe</h1>
 
@@ -50,6 +52,7 @@ export default function RecipeEdit() {
                             placeholder="Enter a recipe title..."
                             className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
                             defaultValue={recipe.title}
+                            required
                         />
                     </div>
 
@@ -91,6 +94,7 @@ export default function RecipeEdit() {
                             placeholder="Add the ingrediets, separated by comma"
                             className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine focus:border-tangerine"
                             defaultValue={recipe.ingredients?.join(', ')}
+                            required
                         ></textarea>
                     </div>
 
@@ -102,6 +106,7 @@ export default function RecipeEdit() {
                             rows="4"
                             className="text-sm mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-tangerine/70 focus:border-tangerine/70"
                             defaultValue={recipe.instructions?.join('. ')}
+                            required
                         ></textarea>
                     </div>
                 </div>
