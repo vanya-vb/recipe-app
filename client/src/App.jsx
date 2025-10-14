@@ -17,10 +17,11 @@ import NotFound from './components/NotFound/NotFound'
 import UserProvider from './providers/UserProvider'
 import AuthGuard from './components/guards/AuthGuard'
 import GuestGuard from './components/guards/GuestGuard'
+import ChefClaude from './components/ChefClaude/ChefClaude';
 
 function App() {
 	usePageTracking();
-	
+
 	// console.log(import.meta.env.VITE_APP_SERVER_URL);
 
 	return (
@@ -40,6 +41,7 @@ function App() {
 							<Route path='/recipes/create' element={<RecipeCreate />} />
 							<Route path='/recipes/:recipeId/edit' element={<RecipeEdit />} />
 							<Route path='/logout' element={<Logout />} />
+							<Route path='/ai-chef' element={<ChefClaude />} />
 						</Route>
 
 						<Route element={<GuestGuard />} >

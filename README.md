@@ -1,5 +1,5 @@
-# Recipe App
-I built this web application to help users plan their daily meals and discover new recipes. Users can browse predefined meals, create and save their own recipes, and interact with others through comments. The app provides both **public** and **private** sections with authentication and role-based permissions.
+# FoodiePhoria
+I built this web application to help users discover new recipes. Users can browse predefined meals, create and save their own recipes, generate recipes with AI model based on given ingredients and interact with others through comments. The app provides both **public** and **private** sections with authentication and role-based permissions.
 
 ## 🚀 Features
 ### 1) **Public Part** (for guests)
@@ -11,15 +11,17 @@ I built this web application to help users plan their daily meals and discover n
  - users can **create**, **edit** and **delete** only their own records
  - users can view and add comments on recipes
  - users can access route-guarded private pages
+ - AI model integration for generating recipes
 
 ## 🛠️ Tech Stack
-- Vite - fast build tool
-- React 19 - front-end libraray
-- React Router 7 - client-side routing
-- TailwindCSS - styling
+- Vite
+- React 19 
+- React Router 7
+- TailwindCSS
+- React Icons
 - React Toastify - notifications
-- React Icons - icons
-- SoftUni Practice Server – back-end with REST API
+- [REST service](https://github.com/softuni-practice-server/softuni-practice-server?tab=readme-ov-file#collections) (for educational purposes)
+- [Claude AI](https://claude.ai/login?returnTo=%2F%3F#)
 
 ## Deployment
 - Server: GCP Cloud Run, Docker, Artifact Registry

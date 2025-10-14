@@ -20,6 +20,7 @@ export default function Header() {
         { name: 'Home', href: '/' },
         { name: 'Recipes', href: '/recipes' },
         { name: 'Add Recipe', href: '/recipes/create' },
+        { name: 'AI Chef', href: '/ai-chef' },
         { name: 'Logout', href: '/logout' },
     ];
 

@@ -5,6 +5,7 @@ import CommentsDisplay from "../CommentsDisplay/CommentsDisplay";
 import CommentsCreate from "../CommentsCreate/CommentsCreate";
 import { useComments, useCreateComment } from "../../api/commentsApi";
 import { toast } from "react-toastify";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
 export default function RecipeDetails() {
     const navigate = useNavigate();
@@ -51,9 +52,10 @@ export default function RecipeDetails() {
 
     return (
         <section className="h-screen w-screen px-6 pb-22 pt-30 lg:px-8 bg-[url('https://images.unsplash.com/photo-1690983321732-07d28c8ade36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-center bg-cover">
-            <div className="absolute inset-0 backdrop-blur-sm bg-black/30 px-6 pt-30 pb-22 overflow-y-auto">
-                <article className="max-w-2xl mx-auto p-8 bg-white rounded-lg shadow-md space-y-8 text-gray-800">
-                    <div className="overflow-hidden rounded-lg">
+            <div className="absolute inset-0 backdrop-blur-xs bg-black/30 px-6 pt-30 pb-22 overflow-y-auto">
+                <article className="max-w-2xl mx-auto p-8 pt-4 bg-white rounded-lg shadow-md space-y-8 text-gray-800">
+                    <Link to="/recipes" className="text-sm font-semibold text-gray-800"><FaLongArrowAltLeft className="inline mr-2" />Back to recipes</Link>
+                    <div className="overflow-hidden rounded-lg mt-2">
                         <img
                             src={recipe.imageUrl}
                             alt={recipe.title}
