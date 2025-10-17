@@ -1,7 +1,14 @@
+import { toast } from "react-toastify";
+
 export default function CommentsCreate({ onCreate }) {
 
     const commentAction = async (formData) => {
         const comment = formData.get('comment');
+
+        if (!comment) {
+            toast.error("Please enter a comment.");
+            return;
+        }
 
         onCreate(comment);
     };

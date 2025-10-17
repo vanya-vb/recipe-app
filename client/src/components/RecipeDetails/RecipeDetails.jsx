@@ -1,8 +1,8 @@
 import { useParams, Link, useNavigate } from "react-router";
 import { useDeleteRecipe, useRecipe } from "../../api/recipeApi";
 import useAuth from "../../hooks/useAuth";
-import CommentsDisplay from "../CommentsDisplay/CommentsDisplay";
-import CommentsCreate from "../CommentsCreate/CommentsCreate";
+import CommentsDisplay from "./CommentsDisplay/CommentsDisplay";
+import CommentsCreate from "./CommentsCreate/CommentsCreate";
 import { useComments, useCreateComment } from "../../api/commentsApi";
 import { toast } from "react-toastify";
 import { FaLongArrowAltLeft } from "react-icons/fa";
