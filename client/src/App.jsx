@@ -18,6 +18,7 @@ import UserProvider from './providers/UserProvider'
 import AuthGuard from './components/guards/AuthGuard'
 import GuestGuard from './components/guards/GuestGuard'
 import ChefClaude from './components/ChefClaude/ChefClaude';
+import ShoppingList from './components/ShoppingList/ShoppingList';
 
 function App() {
 	usePageTracking();
@@ -35,6 +36,7 @@ function App() {
 						<Route path='/' element={<HeroSection />} />
 						<Route path='/recipes' element={<RecipesPage />} />
 						<Route path='/recipes/:recipeId/details' element={<RecipeDetails />} />
+						<Route path='/shopping-list' element={<ShoppingList />} />
 						<Route path='*' element={<NotFound />} />
 
 						<Route element={<AuthGuard />} >

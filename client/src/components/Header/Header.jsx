@@ -12,6 +12,7 @@ export default function Header() {
     const guestNavigation = [
         { name: 'Home', href: '/' },
         { name: 'Recipes', href: '/recipes' },
+        { name: 'Shopping List', href: '/shopping-list' },
         { name: 'Login', href: '/login' },
         { name: 'Register', href: '/register' },
     ];
@@ -20,6 +21,7 @@ export default function Header() {
         { name: 'Home', href: '/' },
         { name: 'Recipes', href: '/recipes' },
         { name: 'Add Recipe', href: '/recipes/create' },
+        { name: 'Shopping List', href: '/shopping-list' },
         { name: 'AI Chef', href: '/ai-chef' },
         { name: 'Logout', href: '/logout' },
     ];
