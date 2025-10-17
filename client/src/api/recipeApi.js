@@ -12,6 +12,7 @@ export const useRecipes = () => {
     useEffect(() => {
         const searchParams = new URLSearchParams({
             sortBy: '_createdOn desc',
+            select: '_id,title,imageUrl,category,ingredients',
         });
 
         setLoading(true);
