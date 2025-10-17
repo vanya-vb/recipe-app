@@ -10,9 +10,13 @@ export const useRecipes = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        const searchParams = new URLSearchParams({
+            sortBy: '_createdOn desc',
+        });
+
         setLoading(true);
 
-        request.get(baseUrl)
+        request.get(`${baseUrl}?${searchParams.toString()}`)
             .then(setRecipes)
             .catch(err => setError(err))
             .finally(() => setLoading(false));
