@@ -61,7 +61,7 @@ export default function ChefClaude() {
 
     return (
         <section className="flex-col min-h-screen px-6 pt-22 pb-15 lg:px-8 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.8),rgba(0,0,0,0.5)),url('/src/assets/ai-chef.jpg')] bg-no-repeat bg-top bg-cover">
-            <div className="absolute inset-0 backdrop-blur-xs bg-black/10 px-6 pt-22 pb-15 overflow-y-auto">
+            <div className="absolute inset-0 backdrop-blur-xs bg-black/10 px-6 pt-22 pb-20 overflow-y-auto">
                 <header className='flex justify-center items-center gap-2 mt-4'>
                     <img src={chefClaudeIcon} className='w-13' alt="chef claude icon" />
                     <h1 className='font-semibold text-white text-2xl'>Chef Claude</h1>
@@ -100,7 +100,7 @@ export default function ChefClaude() {
                                             </div>
 
                                             <button
-                                                className="w-full flex items-center gap-1 sm:w-auto self-start rounded-md bg-tangerine px-4 py-2 text-sm font-semibold text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olivine-70 cursor-pointer hover:shadow-md hover:shadow-tangerine/50"
+                                                className="w-full flex items-center justify-center gap-1 sm:w-auto self-start rounded-md bg-tangerine px-4 py-2 text-sm font-semibold text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olivine-70 cursor-pointer hover:shadow-md hover:shadow-tangerine/50"
                                             >
                                                 <HiPlus /> Add ingredient
                                             </button>
@@ -121,7 +121,7 @@ export default function ChefClaude() {
                                                     : ingredientsListItems}
                                             </ul>
 
-                                            <div className="mt-10 bg-olivine flex flex-wrap justify-between items-center gap-4 rounded-lg py-6 px-6 sm:px-10 self-stretch shadow-md">
+                                            <div className="mt-8 bg-olivine flex flex-wrap justify-between items-center gap-4 rounded-lg py-6 px-6 sm:px-10 self-stretch shadow-md">
                                                 <div className="flex-1 min-w-[220px] text-left">
                                                     <h3 className="text-gray-950 text-xl mb-2 font-semibold">
                                                         Ready for a recipe?
