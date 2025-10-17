@@ -6,13 +6,19 @@ const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/data/recipes`;
 
 export const useRecipes = () => {
     const [recipes, setRecipes] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
+        setLoading(true);
+
         request.get(baseUrl)
-            .then(setRecipes);
+            .then(setRecipes)
+            .catch(err => setError(err))
+            .finally(() => setLoading(false));
     }, []);
 
-    return { recipes };
+    return { recipes, loading, error };
 };
 
 export const useRecipe = (recipeId) => {

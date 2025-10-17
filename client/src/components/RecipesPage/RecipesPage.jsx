@@ -6,7 +6,7 @@ import RecipeItem from "./RecipeItem/RecipeItem";
 import Spinner from "../Spinner/Spinner";
 
 export default function RecipesPage() {
-    const { recipes } = useRecipes();
+    const { recipes, loading, error } = useRecipes();
     const [displayRecipes, setDisplayRecipes] = useState([]);
     const [searchParams] = useSearchParams();
     const location = useLocation();
@@ -59,10 +59,13 @@ export default function RecipesPage() {
                 <div className={`grid gap-8 max-w-6xl mx-auto px-4 ${displayRecipes.length === 0 ? 'grid-cols-1 place-items-center' : 'md:grid-cols-2'}`}>
 
                     {
-                        displayRecipes.length > 0 ?
-                            displayRecipes.map(recipe => <RecipeItem key={recipe._id} {...recipe} />)
-                            :
-                            <Spinner />
+                        loading ?
+                            <Spinner /> :
+                            (displayRecipes.length === 0 ?
+                                (<p className="text-white italic text-xl">{error?.message}</p>) 
+                                :
+                                (displayRecipes.map(recipe => <RecipeItem key={recipe._id} {...recipe} />))
+                            )
                     }
 
                 </div>
