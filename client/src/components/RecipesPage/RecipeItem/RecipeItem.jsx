@@ -10,7 +10,7 @@ export default function RecipeItem({ _id, title, category, imageUrl, ingredients
                     <img
                         src={imageUrl}
                         alt={title}
-                        className="h-48 w-full object-cover border-4 border-olivine rounded-md md:h-40"
+                        className="h-48 w-full object-cover border-4 border-olivine rounded-md lg:h-36"
                     />
                     <button className="absolute bottom-2 right-2 bg-olivine text-night px-2 py-1 rounded-md text-xs font-semibold transition hover:bg-olivine/80 cursor-pointer">
                         Details

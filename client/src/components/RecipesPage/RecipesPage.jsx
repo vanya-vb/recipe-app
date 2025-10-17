@@ -4,6 +4,7 @@ import { useRecipes } from "../../api/recipeApi";
 
 import RecipeItem from "./RecipeItem/RecipeItem";
 import Spinner from "../Spinner/Spinner";
+import Pagination from "../Pagination/Paginaton";
 
 export default function RecipesPage() {
     const { recipes, loading, error } = useRecipes();
@@ -11,6 +12,13 @@ export default function RecipesPage() {
     const [searchParams] = useSearchParams();
     const location = useLocation();
     // console.log(Object.fromEntries(searchParams));
+    const [page, setPage] = useState(1);
+    const recipesPerPage = 4;
+
+    const totalPages = Math.ceil(displayRecipes.length / recipesPerPage);
+    const indexOfLast = page * recipesPerPage;
+    const indexOfFirst = indexOfLast - recipesPerPage;
+    const currentRecipes = displayRecipes.slice(indexOfFirst, indexOfLast);
 
     const sortOptions = [
         { name: 'All', href: '/recipes' },
@@ -28,12 +36,14 @@ export default function RecipesPage() {
         } else {
             setDisplayRecipes([...recipes]);
         }
+
+        setPage(1);
     }, [recipes, searchParams]);
 
     return (
         <section className="h-screen w-screen bg-[url(https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center">
-            <div className="absolute inset-0 backdrop-blur-xs bg-black/30 px-4 pt-30 pb-20 overflow-y-auto">
-                <div className="text-center mb-8">
+            <div className="absolute inset-0 backdrop-blur-xs bg-black/30 px-4 pt-30 pb-15 overflow-y-auto">
+                <div className="text-center mb-6">
                     <h2 className="text-3xl text-white font-bold tracking-widest uppercase">Recipes</h2>
                     <div className="w-20 h-1 bg-olivine mx-auto mt-2" />
                 </div>
@@ -44,7 +54,7 @@ export default function RecipesPage() {
                         <NavLink
                             key={option.name}
                             to={option.href}
-                            className={() => `uppercase border border-olivine px-4 py-2 rounded-md transition-all text-xs tracking-wide 
+                            className={() => `uppercase border border-olivine px-4 py-1 rounded-md transition-all text-xs tracking-wide 
                                 ${location.pathname + location.search === option.href
                                     ? "bg-olivine text-night"
                                     : "text-olivine hover:bg-olivine hover:text-night"}`
@@ -62,13 +72,14 @@ export default function RecipesPage() {
                         loading ?
                             <Spinner /> :
                             (displayRecipes.length === 0 ?
-                                (<p className="text-white italic text-xl">{error?.message}</p>) 
+                                (<p className="text-white italic text-xl">{error?.message}</p>)
                                 :
-                                (displayRecipes.map(recipe => <RecipeItem key={recipe._id} {...recipe} />))
+                                (currentRecipes.map(recipe => <RecipeItem key={recipe._id} {...recipe} />))
                             )
                     }
-
                 </div>
+
+                <Pagination totalPages={totalPages} page={page} onPageChange={setPage} />
             </div>
         </section>
     )
