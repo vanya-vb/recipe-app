@@ -22,7 +22,10 @@ describe('Header', () => {
             </BrowserRouter>
         );
 
-        expect(screen.getByText('Home', 'Recipes', 'Shopping List', 'Login', 'Register', 'Add recipe', 'AI Chef', 'Logout'))
-            .toBeInTheDocument();
+        const navigation = ['Home', 'Recipes', 'Shopping List', 'Login', 'Register'];
+
+        navigation.forEach(navItem => {
+            expect(screen.getByText(navItem)).toBeInTheDocument();
+        });
     });
 });

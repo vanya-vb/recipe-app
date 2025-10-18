@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router-dom'
 import { useRegister } from '../../api/authApi';
 import { useUserContext } from '../../contexts/UserContext';
 import { toast } from 'react-toastify';

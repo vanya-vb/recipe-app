@@ -1,5 +1,5 @@
 import { useActionState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router-dom'
 import { useLogin } from '../../api/authApi';
 import { UserContext } from '../../contexts/UserContext';
 import { toast } from 'react-toastify';
