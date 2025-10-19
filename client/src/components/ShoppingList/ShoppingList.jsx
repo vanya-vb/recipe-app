@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { toast } from 'react-toastify';
 
 export default function ShoppingList() {
@@ -8,6 +8,7 @@ export default function ShoppingList() {
 
         return shoppingList || [];
     });
+    const inputRef = useRef(null);
 
     useEffect(() => {
         localStorage.setItem("shoppingList", JSON.stringify(shoppingList));
@@ -23,6 +24,7 @@ export default function ShoppingList() {
 
         setShoppingList([...shoppingList, { name: product, isBought: false }]);
         setProduct("");
+        inputRef.current?.focus();
     };
 
     const toggleIsBought = (name) => {
@@ -47,6 +49,7 @@ export default function ShoppingList() {
                         <input
                             type="text"
                             name="title"
+                            ref={inputRef}
                             className="w-full self-stretch text-sm p-2 border border-gray-200 rounded-lg bg-gray-50"
                             placeholder="e.g. bread"
                             value={product}
