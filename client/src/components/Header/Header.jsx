@@ -7,6 +7,7 @@ import useAuth from '../../hooks/useAuth'
 import logoImg from '/src/assets/logo.png'
 
 export default function Header() {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { email, isAuthenticated } = useAuth();
 
     const guestNavigation = [
@@ -25,8 +26,6 @@ export default function Header() {
         { name: 'AI Chef', href: '/ai-chef' },
         { name: 'Logout', href: '/logout' },
     ];
-
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
         <header className="fixed inset-x-0 top-0 z-50 bg-night/80">

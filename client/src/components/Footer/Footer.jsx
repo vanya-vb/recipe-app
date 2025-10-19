@@ -24,7 +24,7 @@ export default function Footer() {
                         <FaLinkedin size={16} />
                     </a>
                     <a
-                        href="#"
+                        href="https://vanya-vb.github.io/portfolio-page/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-tangerine transition"
