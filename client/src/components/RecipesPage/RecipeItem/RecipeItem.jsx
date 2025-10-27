@@ -1,11 +1,11 @@
 import { Link } from 'react-router'
 
-export default function RecipeItem({ _id, title, category, imageUrl, ingredients }) {
+export default function RecipeItem({ _id, title, category, imageUrl, ingredients, searchParams, mealFilter }) {
     ingredients = ingredients.join(', ');
 
     return (
         <article className="grid gap-4 sm:grid-cols-[200px_1fr] capitalize">
-            <Link to={`/recipes/${_id}/details`}>
+            <Link to={`/recipes/${_id}/details`} state={{ search: searchParams.toString() }}>
                 <div className="relative">
                     <img
                         src={imageUrl}

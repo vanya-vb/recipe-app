@@ -43,6 +43,7 @@ export default function RecipesPage() {
                 </div>
 
                 <div className="flex justify-center flex-wrap gap-3 mb-10">
+                    
                     {/* Filters */}
                     {sortOptions.map(option => (
                         <button
@@ -60,14 +61,19 @@ export default function RecipesPage() {
                 </div>
 
                 <div className={`grid gap-8 max-w-6xl mx-auto px-4 ${displayRecipes.length === 0 ? 'grid-cols-1 place-items-center' : 'md:grid-cols-2'}`}>
-
                     {
                         loading ?
                             <Spinner /> :
                             (displayRecipes.length === 0 ?
                                 (<p className="text-white italic text-xl">{error?.message}</p>)
                                 :
-                                (currentRecipes.map(recipe => <RecipeItem key={recipe._id} {...recipe} />))
+                                (currentRecipes.map(recipe =>
+                                    <RecipeItem
+                                        key={recipe._id}
+                                        searchParams={searchParams}
+                                        mealFilter={mealFilter}
+                                        {...recipe}
+                                    />))
                             )
                     }
                 </div>
