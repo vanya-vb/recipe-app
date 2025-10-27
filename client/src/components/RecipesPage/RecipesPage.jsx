@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useLocation, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router";
 import { useRecipes } from "../../api/recipeApi";
 
 import RecipeItem from "./RecipeItem/RecipeItem";
@@ -7,38 +7,32 @@ import Spinner from "../Spinner/Spinner";
 import Pagination from "../Pagination/Paginaton";
 
 export default function RecipesPage() {
+    const [searchParams, setSearchParams] = useSearchParams();
     const { recipes, loading, error } = useRecipes();
-    const [displayRecipes, setDisplayRecipes] = useState([]);
-    const [searchParams] = useSearchParams();
-    const location = useLocation();
-    // console.log(Object.fromEntries(searchParams));
     const [page, setPage] = useState(1);
-    const recipesPerPage = 4;
 
+    const sortOptions = [
+        { name: 'all', setterFunction: () => setSearchParams("") },
+        { name: 'breakfast', setterFunction: () => setSearchParams('?meal=breakfast') },
+        { name: 'lunch', setterFunction: () => setSearchParams('?meal=lunch') },
+        { name: 'dinner', setterFunction: () => setSearchParams('?meal=dinner') },
+        { name: 'snacks', setterFunction: () => setSearchParams('?meal=snacks') },
+    ];
+
+    const mealFilter = searchParams.get("meal");
+
+    const displayRecipes = mealFilter ? recipes.filter(recipe => recipe.category === mealFilter) : recipes;
+
+    useEffect(() => {
+        setPage(1);
+    }, [searchParams]);
+
+    // Calculate pages
+    const recipesPerPage = 4;
     const totalPages = Math.ceil(displayRecipes.length / recipesPerPage);
     const indexOfLast = page * recipesPerPage;
     const indexOfFirst = indexOfLast - recipesPerPage;
     const currentRecipes = displayRecipes.slice(indexOfFirst, indexOfLast);
-
-    const sortOptions = [
-        { name: 'All', href: '/recipes' },
-        { name: 'Breakfast', href: '/recipes?meal=breakfast' },
-        { name: 'Lunch', href: '/recipes?meal=lunch' },
-        { name: 'Dinner', href: '/recipes?meal=dinner' },
-        { name: 'Snacks', href: '/recipes?meal=snacks' },
-    ];
-
-    useEffect(() => {
-        const filter = Object.fromEntries(searchParams);
-
-        if (filter.meal) {
-            setDisplayRecipes(recipes.filter(recipe => filter.meal === recipe.category));
-        } else {
-            setDisplayRecipes([...recipes]);
-        }
-
-        setPage(1);
-    }, [recipes, searchParams]);
 
     return (
         <section className="h-screen w-screen bg-[url(https://images.unsplash.com/photo-1576092762791-dd9e2220abd1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center">
@@ -49,21 +43,20 @@ export default function RecipesPage() {
                 </div>
 
                 <div className="flex justify-center flex-wrap gap-3 mb-10">
-
+                    {/* Filters */}
                     {sortOptions.map(option => (
-                        <NavLink
+                        <button
                             key={option.name}
-                            to={option.href}
-                            className={() => `uppercase border border-olivine px-4 py-1 rounded-md transition-all text-xs tracking-wide 
-                                ${location.pathname + location.search === option.href
+                            onClick={option.setterFunction}
+                            className={`uppercase border border-olivine px-4 py-1 rounded-md transition-all text-xs tracking-wide cursor-pointer
+                                ${mealFilter === option.name
                                     ? "bg-olivine text-night"
                                     : "text-olivine hover:bg-olivine hover:text-night"}`
                             }
                         >
                             {option.name}
-                        </NavLink>)
-                    )}
-
+                        </button>
+                    ))}
                 </div>
 
                 <div className={`grid gap-8 max-w-6xl mx-auto px-4 ${displayRecipes.length === 0 ? 'grid-cols-1 place-items-center' : 'md:grid-cols-2'}`}>
